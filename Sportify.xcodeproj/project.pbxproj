@@ -17,6 +17,16 @@
 		0319819F2BF482E9008ECF00 /* SportifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0319819E2BF482E9008ECF00 /* SportifyTests.swift */; };
 		031981A92BF482E9008ECF00 /* SportifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031981A82BF482E9008ECF00 /* SportifyUITests.swift */; };
 		031981AB2BF482E9008ECF00 /* SportifyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031981AA2BF482E9008ECF00 /* SportifyUITestsLaunchTests.swift */; };
+		03D6B9AF2BF66C5600095008 /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03D6B9AE2BF66C5600095008 /* Second.storyboard */; };
+		03D6B9B22BF66D9600095008 /* LeguesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D6B9B02BF66D9600095008 /* LeguesTableViewController.swift */; };
+		03E48EA62BF54F5A00C8A955 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E48EA42BF54F5A00C8A955 /* HomeCollectionViewController.swift */; };
+		03E48EA92BF5526E00C8A955 /* animation2.json in Resources */ = {isa = PBXBuildFile; fileRef = 03E48EA82BF5526E00C8A955 /* animation2.json */; };
+		03E48EAB2BF56C9200C8A955 /* OnBoradingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E48EAA2BF56C9200C8A955 /* OnBoradingViewController.swift */; };
+		03E48EAD2BF5714000C8A955 /* ContainerPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E48EAC2BF5714000C8A955 /* ContainerPageViewController.swift */; };
+		03E7B6A92BF63B3F000BC5DF /* animation3.json in Resources */ = {isa = PBXBuildFile; fileRef = 03E7B6A82BF63B3F000BC5DF /* animation3.json */; };
+		740F0B0F204BA81169AF8739 /* Pods_Sportify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFD5532CDDBCC36AD3E3094 /* Pods_Sportify.framework */; };
+		CF5929F45920E3CC3A66FABC /* Pods_Sportify_SportifyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708F5F450FA59FCF8C53E6F2 /* Pods_Sportify_SportifyUITests.framework */; };
+		D8E245C85C5FCFDB5421674A /* Pods_SportifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E574995E63AA889511CB8772 /* Pods_SportifyTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +61,22 @@
 		031981A42BF482E9008ECF00 /* SportifyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportifyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		031981A82BF482E9008ECF00 /* SportifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportifyUITests.swift; sourceTree = "<group>"; };
 		031981AA2BF482E9008ECF00 /* SportifyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportifyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		03D6B9AE2BF66C5600095008 /* Second.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Second.storyboard; sourceTree = "<group>"; };
+		03D6B9B02BF66D9600095008 /* LeguesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeguesTableViewController.swift; sourceTree = "<group>"; };
+		03E48EA42BF54F5A00C8A955 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
+		03E48EA82BF5526E00C8A955 /* animation2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation2.json; sourceTree = "<group>"; };
+		03E48EAA2BF56C9200C8A955 /* OnBoradingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoradingViewController.swift; sourceTree = "<group>"; };
+		03E48EAC2BF5714000C8A955 /* ContainerPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerPageViewController.swift; sourceTree = "<group>"; };
+		03E7B6A82BF63B3F000BC5DF /* animation3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation3.json; sourceTree = "<group>"; };
+		2FFD5532CDDBCC36AD3E3094 /* Pods_Sportify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48DD1672BE117ED6C551C984 /* Pods-Sportify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportify.debug.xcconfig"; path = "Target Support Files/Pods-Sportify/Pods-Sportify.debug.xcconfig"; sourceTree = "<group>"; };
+		663502EF2416ADBD10B5C57B /* Pods-SportifyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportifyTests.debug.xcconfig"; path = "Target Support Files/Pods-SportifyTests/Pods-SportifyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6A6D220563FAAA99113DB9AE /* Pods-Sportify-SportifyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportify-SportifyUITests.release.xcconfig"; path = "Target Support Files/Pods-Sportify-SportifyUITests/Pods-Sportify-SportifyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		708F5F450FA59FCF8C53E6F2 /* Pods_Sportify_SportifyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportify_SportifyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AC35F703BAAC1F831BB9252 /* Pods-Sportify-SportifyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportify-SportifyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Sportify-SportifyUITests/Pods-Sportify-SportifyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C8CF375FE8605E45ECA16403 /* Pods-Sportify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportify.release.xcconfig"; path = "Target Support Files/Pods-Sportify/Pods-Sportify.release.xcconfig"; sourceTree = "<group>"; };
+		D774088E6659AC9D7BFB33A8 /* Pods-SportifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportifyTests.release.xcconfig"; path = "Target Support Files/Pods-SportifyTests/Pods-SportifyTests.release.xcconfig"; sourceTree = "<group>"; };
+		E574995E63AA889511CB8772 /* Pods_SportifyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportifyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				740F0B0F204BA81169AF8739 /* Pods_Sportify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8E245C85C5FCFDB5421674A /* Pods_SportifyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF5929F45920E3CC3A66FABC /* Pods_Sportify_SportifyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +114,8 @@
 				0319819D2BF482E9008ECF00 /* SportifyTests */,
 				031981A72BF482E9008ECF00 /* SportifyUITests */,
 				031981822BF482E0008ECF00 /* Products */,
+				34A4981DFEFE0D44B9D11828 /* Pods */,
+				A667D87C3DFF6A96E5AD186B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,12 +132,14 @@
 		031981832BF482E0008ECF00 /* Sportify */ = {
 			isa = PBXGroup;
 			children = (
+				03D6B99C2BF6647800095008 /* Model */,
+				03D6B99D2BF664A900095008 /* Services */,
+				03D6B99E2BF6651600095008 /* Modules */,
+				03D6B99B2BF6644500095008 /* View */,
+				03D6B9A82BF6682900095008 /* Json */,
 				031981842BF482E0008ECF00 /* AppDelegate.swift */,
 				031981862BF482E0008ECF00 /* SceneDelegate.swift */,
-				031981882BF482E0008ECF00 /* ViewController.swift */,
-				0319818A2BF482E0008ECF00 /* Main.storyboard */,
 				031981902BF482E8008ECF00 /* Assets.xcassets */,
-				031981922BF482E8008ECF00 /* LaunchScreen.storyboard */,
 				031981952BF482E8008ECF00 /* Info.plist */,
 				0319818D2BF482E0008ECF00 /* Sportify.xcdatamodeld */,
 			);
@@ -130,6 +163,170 @@
 			path = SportifyUITests;
 			sourceTree = "<group>";
 		};
+		03D6B99B2BF6644500095008 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0319818A2BF482E0008ECF00 /* Main.storyboard */,
+				031981922BF482E8008ECF00 /* LaunchScreen.storyboard */,
+				03D6B9AE2BF66C5600095008 /* Second.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		03D6B99C2BF6647800095008 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		03D6B99D2BF664A900095008 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				03D6B9A02BF6661800095008 /* DataBase Service */,
+				03D6B99F2BF665C500095008 /* Network Service */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		03D6B99E2BF6651600095008 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				03D6B9A92BF6687200095008 /* Legues */,
+				03D6B9A62BF6676F00095008 /* OnBording Screen */,
+				03D6B9A42BF6673A00095008 /* Splash Screen */,
+				03D6B9A12BF6667C00095008 /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		03D6B99F2BF665C500095008 /* Network Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Network Service";
+			sourceTree = "<group>";
+		};
+		03D6B9A02BF6661800095008 /* DataBase Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "DataBase Service";
+			sourceTree = "<group>";
+		};
+		03D6B9A12BF6667C00095008 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				03D6B9A32BF6669600095008 /* viewModel */,
+				03D6B9A22BF6668900095008 /* view */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		03D6B9A22BF6668900095008 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				03E48EA42BF54F5A00C8A955 /* HomeCollectionViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		03D6B9A32BF6669600095008 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		03D6B9A42BF6673A00095008 /* Splash Screen */ = {
+			isa = PBXGroup;
+			children = (
+				03D6B9A52BF6674E00095008 /* view */,
+			);
+			path = "Splash Screen";
+			sourceTree = "<group>";
+		};
+		03D6B9A52BF6674E00095008 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				031981882BF482E0008ECF00 /* ViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		03D6B9A62BF6676F00095008 /* OnBording Screen */ = {
+			isa = PBXGroup;
+			children = (
+				03D6B9A72BF667AA00095008 /* view */,
+			);
+			path = "OnBording Screen";
+			sourceTree = "<group>";
+		};
+		03D6B9A72BF667AA00095008 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				03E48EAA2BF56C9200C8A955 /* OnBoradingViewController.swift */,
+				03E48EAC2BF5714000C8A955 /* ContainerPageViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		03D6B9A82BF6682900095008 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				03E48EA82BF5526E00C8A955 /* animation2.json */,
+				03E7B6A82BF63B3F000BC5DF /* animation3.json */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
+		03D6B9A92BF6687200095008 /* Legues */ = {
+			isa = PBXGroup;
+			children = (
+				03D6B9AB2BF6689300095008 /* viewMode */,
+				03D6B9AA2BF6688B00095008 /* view */,
+			);
+			path = Legues;
+			sourceTree = "<group>";
+		};
+		03D6B9AA2BF6688B00095008 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				03D6B9B02BF66D9600095008 /* LeguesTableViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		03D6B9AB2BF6689300095008 /* viewMode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = viewMode;
+			sourceTree = "<group>";
+		};
+		34A4981DFEFE0D44B9D11828 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				48DD1672BE117ED6C551C984 /* Pods-Sportify.debug.xcconfig */,
+				C8CF375FE8605E45ECA16403 /* Pods-Sportify.release.xcconfig */,
+				9AC35F703BAAC1F831BB9252 /* Pods-Sportify-SportifyUITests.debug.xcconfig */,
+				6A6D220563FAAA99113DB9AE /* Pods-Sportify-SportifyUITests.release.xcconfig */,
+				663502EF2416ADBD10B5C57B /* Pods-SportifyTests.debug.xcconfig */,
+				D774088E6659AC9D7BFB33A8 /* Pods-SportifyTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A667D87C3DFF6A96E5AD186B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2FFD5532CDDBCC36AD3E3094 /* Pods_Sportify.framework */,
+				708F5F450FA59FCF8C53E6F2 /* Pods_Sportify_SportifyUITests.framework */,
+				E574995E63AA889511CB8772 /* Pods_SportifyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +334,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 031981AE2BF482E9008ECF00 /* Build configuration list for PBXNativeTarget "Sportify" */;
 			buildPhases = (
+				D11A88763BF140F4C601519B /* [CP] Check Pods Manifest.lock */,
 				0319817D2BF482E0008ECF00 /* Sources */,
 				0319817E2BF482E0008ECF00 /* Frameworks */,
 				0319817F2BF482E0008ECF00 /* Resources */,
+				E59478AAE16446A8AEE3DF69 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,6 +353,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 031981B12BF482E9008ECF00 /* Build configuration list for PBXNativeTarget "SportifyTests" */;
 			buildPhases = (
+				E57FBAF6DBA852FD8286EC77 /* [CP] Check Pods Manifest.lock */,
 				031981962BF482E9008ECF00 /* Sources */,
 				031981972BF482E9008ECF00 /* Frameworks */,
 				031981982BF482E9008ECF00 /* Resources */,
@@ -172,9 +372,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 031981B42BF482E9008ECF00 /* Build configuration list for PBXNativeTarget "SportifyUITests" */;
 			buildPhases = (
+				845B8DD11D86BEE6897F1602 /* [CP] Check Pods Manifest.lock */,
 				031981A02BF482E9008ECF00 /* Sources */,
 				031981A12BF482E9008ECF00 /* Frameworks */,
 				031981A22BF482E9008ECF00 /* Resources */,
+				FD462BE9ECB1D3D6C1B3000B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,9 +436,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03D6B9AF2BF66C5600095008 /* Second.storyboard in Resources */,
 				031981942BF482E8008ECF00 /* LaunchScreen.storyboard in Resources */,
 				031981912BF482E8008ECF00 /* Assets.xcassets in Resources */,
+				03E7B6A92BF63B3F000BC5DF /* animation3.json in Resources */,
 				0319818C2BF482E0008ECF00 /* Main.storyboard in Resources */,
+				03E48EA92BF5526E00C8A955 /* animation2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +461,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		845B8DD11D86BEE6897F1602 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sportify-SportifyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D11A88763BF140F4C601519B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sportify-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E57FBAF6DBA852FD8286EC77 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SportifyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E59478AAE16446A8AEE3DF69 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sportify/Pods-Sportify-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sportify/Pods-Sportify-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sportify/Pods-Sportify-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD462BE9ECB1D3D6C1B3000B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sportify-SportifyUITests/Pods-Sportify-SportifyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sportify-SportifyUITests/Pods-Sportify-SportifyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sportify-SportifyUITests/Pods-Sportify-SportifyUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0319817D2BF482E0008ECF00 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -264,7 +572,11 @@
 				031981892BF482E0008ECF00 /* ViewController.swift in Sources */,
 				0319818F2BF482E0008ECF00 /* Sportify.xcdatamodeld in Sources */,
 				031981852BF482E0008ECF00 /* AppDelegate.swift in Sources */,
+				03E48EA62BF54F5A00C8A955 /* HomeCollectionViewController.swift in Sources */,
 				031981872BF482E0008ECF00 /* SceneDelegate.swift in Sources */,
+				03E48EAB2BF56C9200C8A955 /* OnBoradingViewController.swift in Sources */,
+				03D6B9B22BF66D9600095008 /* LeguesTableViewController.swift in Sources */,
+				03E48EAD2BF5714000C8A955 /* ContainerPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +748,7 @@
 		};
 		031981AF2BF482E9008ECF00 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48DD1672BE117ED6C551C984 /* Pods-Sportify.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -463,6 +776,7 @@
 		};
 		031981B02BF482E9008ECF00 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8CF375FE8605E45ECA16403 /* Pods-Sportify.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -490,6 +804,7 @@
 		};
 		031981B22BF482E9008ECF00 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 663502EF2416ADBD10B5C57B /* Pods-SportifyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -509,6 +824,7 @@
 		};
 		031981B32BF482E9008ECF00 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D774088E6659AC9D7BFB33A8 /* Pods-SportifyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +844,7 @@
 		};
 		031981B52BF482E9008ECF00 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AC35F703BAAC1F831BB9252 /* Pods-Sportify-SportifyUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -545,6 +862,7 @@
 		};
 		031981B62BF482E9008ECF00 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A6D220563FAAA99113DB9AE /* Pods-Sportify-SportifyUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
