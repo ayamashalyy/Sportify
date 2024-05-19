@@ -7,15 +7,29 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
 
-class HomeCollectionViewController: UICollectionViewController {
+
+class HomeCollectionViewController: UICollectionViewController , UICollectionViewDelegateFlowLayout{
     
+    let testData = ["sport1","sports2","sports3","sports4"]
     override func viewDidLoad() {
         super.viewDidLoad()
     print("hellllllo")
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+      
+       let layout = UICollectionViewFlowLayout()
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.addSubview(collectionView)
+        
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        
+        collectionView.backgroundColor = UIColor.white
+        
+        collectionView.register(CustomCell.self,forCellWithReuseIdentifier: "cell")
     }
 
     /*
@@ -32,25 +46,41 @@ class HomeCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return testData.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"cell", for: indexPath) as! CustomCell
+        cell.images.image = UIImage(named:"4.png")
+        
         // Configure the cell
     
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // Customize the size of each item here
+        return CGSize(width: view.frame.width/2-20, height: 250)
+    }
 
     // MARK: UICollectionViewDelegate
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("tappped")
+        let secondStoryboard = UIStoryboard(name: "SecondStoryboard", bundle: nil)
+            guard let secondVC = secondStoryboard.instantiateViewController(withIdentifier: "SecondViewControllerIdentifier") as? LeguesTableViewController else {
+                return
+            }
+            
+            // Perform the navigation
+            navigationController?.pushViewController(secondVC, animated: true)
+    }
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
@@ -80,4 +110,25 @@ class HomeCollectionViewController: UICollectionViewController {
     }
     */
     
+}
+
+
+class CustomCell :UICollectionViewCell{
+    let images = UIImageView()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(images)
+        images.translatesAutoresizingMaskIntoConstraints = false
+        images.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        images.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        images.leadingAnchor.constraint(equalTo:leadingAnchor).isActive = true
+        images.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        
+        images.layer.cornerRadius = 20
+        images.layer.masksToBounds = true
+        
+    }
+    required init?(coder aDecoder:NSCoder) {
+      fatalError("init has been imp")
+    }
 }
