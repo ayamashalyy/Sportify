@@ -72,7 +72,14 @@ class HomeCollectionViewController: UICollectionViewController , UICollectionVie
     // MARK: UICollectionViewDelegate
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        print("tappped")
+        let secondStoryboard = UIStoryboard(name: "SecondStoryboard", bundle: nil)
+            guard let secondVC = secondStoryboard.instantiateViewController(withIdentifier: "SecondViewControllerIdentifier") as? LeguesTableViewController else {
+                return
+            }
+            
+            // Perform the navigation
+            navigationController?.pushViewController(secondVC, animated: true)
     }
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking

@@ -58,13 +58,16 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JV4-iT-uEI">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="JV4-iT-uEI">
                                 <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lTh-nh-NfQ">
                                     <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <segue destination="CAN-iw-n0x" kind="show" id="iBd-q0-3XV"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -77,6 +80,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aM6-mj-LRb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1753" y="-425"/>
+        </scene>
+        <!--Second-->
+        <scene sceneID="VKr-3c-8SZ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Second" id="CAN-iw-n0x" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="r4G-Zq-3gN"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ctY-9b-25T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2468" y="-638"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="mE0-EV-EOd">
@@ -164,9 +177,6 @@
             <point key="canvasLocation" x="799.23664122137404" y="-27.464788732394368"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="ZCL-O1-H5M"/>
-    </designables>
     <resources>
         <image name="basketball-player" width="32" height="32"/>
         <image name="favorite" width="32" height="32"/>
