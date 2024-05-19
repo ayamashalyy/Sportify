@@ -26,22 +26,33 @@
                                     <constraint firstAttribute="width" constant="155" id="e0t-Hh-Qm7"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2My-8Y-jOm">
-                                <rect key="frame" x="223" y="64" width="184" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2My-8Y-jOm">
+                                <rect key="frame" x="168" y="40" width="170" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="7BI-ix-EUu"/>
+                                    <constraint firstAttribute="width" constant="170" id="TJZ-9h-5de"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="tintColor"/>
                         <constraints>
                             <constraint firstItem="Mzc-N3-rdU" firstAttribute="top" secondItem="wrG-XP-PTx" secondAttribute="top" constant="8" id="1Ts-mx-JDy"/>
                             <constraint firstAttribute="bottom" secondItem="Mzc-N3-rdU" secondAttribute="bottom" constant="8" id="EwM-gX-reE"/>
                             <constraint firstItem="Mzc-N3-rdU" firstAttribute="leading" secondItem="wrG-XP-PTx" secondAttribute="leading" constant="8" id="JWn-GW-5KD"/>
-                            <constraint firstItem="2My-8Y-jOm" firstAttribute="centerX" secondItem="wrG-XP-PTx" secondAttribute="centerX" id="LhZ-hK-wTb"/>
-                            <constraint firstItem="2My-8Y-jOm" firstAttribute="centerY" secondItem="wrG-XP-PTx" secondAttribute="centerY" id="P5N-3f-1ux"/>
-                            <constraint firstItem="2My-8Y-jOm" firstAttribute="leading" secondItem="Mzc-N3-rdU" secondAttribute="trailing" constant="60" id="Zsl-gb-58v"/>
+                            <constraint firstAttribute="bottom" secondItem="2My-8Y-jOm" secondAttribute="bottom" constant="88" id="Ocf-w2-b5D"/>
+                            <constraint firstItem="2My-8Y-jOm" firstAttribute="leading" secondItem="Mzc-N3-rdU" secondAttribute="trailing" constant="5" id="Zsl-gb-58v"/>
+                            <constraint firstItem="2My-8Y-jOm" firstAttribute="top" secondItem="wrG-XP-PTx" secondAttribute="top" constant="40" id="npi-sB-QRO"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="NO"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="25"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <constraints>
@@ -60,8 +71,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

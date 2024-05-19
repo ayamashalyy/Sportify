@@ -8,6 +8,7 @@
 import UIKit
 import Kingfisher
 class LeguesTableViewController: UITableViewController {
+    let testData = ["sport1","sports2","sports3","sports4"]
     var viewModel = LeguesViewModel()
 
     override func viewDidLoad() {
@@ -36,25 +37,28 @@ class LeguesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.leagues.count
+        return testData.count
+        //viewModel.leagues.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LeguesTableViewCell", for: indexPath) as! LeguesTableViewCell
-        let league = viewModel.leagues[indexPath.row]
-        cell.legueLabel.text = league.league_name
-        if let logoURL = league.league_logo, let url = URL(string: logoURL) {
-                    cell.legueImage.kf.setImage(with: url)
-                } else {
-                    cell.legueImage.image = UIImage(named: "1")
-                }
+       // let league = viewModel.leagues[indexPath.row]
+        cell.legueLabel.text = testData[indexPath.row]
+        //league.league_name
+//        if let logoURL = league.league_logo, let url = URL(string: logoURL) {
+//                    cell.legueImage.kf.setImage(with: url)
+//                } else {
+//                    cell.legueImage.image = UIImage(named: "1")
+//                }
+        cell.legueImage.image = UIImage(named: "1")
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 350
+        return 100
     }
    
     
