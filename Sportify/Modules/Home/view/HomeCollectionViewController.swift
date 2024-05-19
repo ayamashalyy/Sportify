@@ -47,7 +47,12 @@ class HomeCollectionViewController: UICollectionViewController , UICollectionVie
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"cell", for: indexPath) as! CustomCell
         cell.images.image = UIImage(named:"4.png")
+
+        cell.configure(with: testData[indexPath.item])
+
+
         
+
     
         return cell
     }
@@ -72,20 +77,42 @@ class HomeCollectionViewController: UICollectionViewController , UICollectionVie
 
 class CustomCell :UICollectionViewCell{
     let images = UIImageView()
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        addSubview(images)
-        images.translatesAutoresizingMaskIntoConstraints = false
-        images.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        images.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        images.leadingAnchor.constraint(equalTo:leadingAnchor).isActive = true
-        images.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        
-        images.layer.cornerRadius = 20
-        images.layer.masksToBounds = true
-        
-    }
-    required init?(coder aDecoder:NSCoder) {
-      fatalError("init has been imp")
-    }
+      let label = UILabel()
+
+      override init(frame: CGRect) {
+          super.init(frame: frame)
+
+          // Add the image view
+          addSubview(images)
+          images.translatesAutoresizingMaskIntoConstraints = false
+          images.topAnchor.constraint(equalTo: topAnchor).isActive = true
+          images.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+          images.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+          images.heightAnchor.constraint(equalToConstant: 200).isActive = true
+
+          // Add the label
+          addSubview(label)
+          label.translatesAutoresizingMaskIntoConstraints = false
+          label.topAnchor.constraint(equalTo: images.bottomAnchor, constant: 8).isActive = true
+          label.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+          label.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+          label.heightAnchor.constraint(equalToConstant: 30).isActive = true
+
+          // Customize the label's appearance
+          label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+          label.textColor = .black
+          label.textAlignment = .center
+
+          images.layer.cornerRadius = 20
+          images.layer.masksToBounds = true
+      }
+
+      required init?(coder aDecoder: NSCoder) {
+          fatalError("init has been imp")
+      }
+
+      // Set the label's text in the `cellForItemAt` method of the `HomeCollectionViewController`
+      func configure(with text: String) {
+          label.text = text
+      }
 }
