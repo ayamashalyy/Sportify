@@ -43,7 +43,7 @@
             </objects>
             <point key="canvasLocation" x="114" y="-27"/>
         </scene>
-        <!--Home-->
+        <!--Sports-->
         <scene sceneID="5I1-UM-psw">
             <objects>
                 <collectionViewController id="UUO-U5-Orj" customClass="HomeCollectionViewController" customModule="Sportify" customModuleProvider="target" sceneMemberID="viewController">
@@ -75,11 +75,11 @@
                             <outlet property="delegate" destination="UUO-U5-Orj" id="BOk-kS-hdB"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Home" image="basketball-player" id="bUL-Nz-drk"/>
+                    <navigationItem key="navigationItem" title="Sports" id="Eps-Md-Ixc"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aM6-mj-LRb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1753" y="-425"/>
+            <point key="canvasLocation" x="2678.6259541984732" y="-425.35211267605638"/>
         </scene>
         <!--Second-->
         <scene sceneID="VKr-3c-8SZ">
@@ -89,7 +89,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ctY-9b-25T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2468" y="-638"/>
+            <point key="canvasLocation" x="3393.8931297709923" y="-638.02816901408448"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="mE0-EV-EOd">
@@ -168,13 +168,32 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="UUO-U5-Orj" kind="relationship" relationship="viewControllers" id="EEN-5H-mYe"/>
+                        <segue destination="qgy-mS-XK1" kind="relationship" relationship="viewControllers" id="EEN-5H-mYe"/>
                         <segue destination="6Ik-yb-xob" kind="relationship" relationship="viewControllers" id="63o-cF-HN0"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m2o-c2-OGX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="799.23664122137404" y="-27.464788732394368"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="nCX-GO-AtR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qgy-mS-XK1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="basketball-player" id="bUL-Nz-drk"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vak-jz-VkG">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UUO-U5-Orj" kind="relationship" relationship="rootViewController" id="C0i-m6-HTT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2bu-o9-ZTr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1751.9083969465648" y="-425.35211267605638"/>
         </scene>
     </scenes>
     <resources>

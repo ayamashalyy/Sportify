@@ -68,8 +68,8 @@ class HomeCollectionViewController: UICollectionViewController , UICollectionVie
             guard let secondVC = secondStoryboard.instantiateViewController(withIdentifier: "SecondViewControllerIdentifier") as? LeguesTableViewController else {
                 return
             }
-        secondVC.modalPresentationStyle = .fullScreen
-        present(secondVC, animated: true, completion: nil)
+        //secondVC.modalPresentationStyle = .fullScreen
+        navigationController?.pushViewController(secondVC, animated: true)
     }
   
 }
