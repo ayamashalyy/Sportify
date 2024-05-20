@@ -53,7 +53,7 @@ class LeguesTableViewController: UITableViewController {
 //                    cell.legueImage.image = UIImage(named: "1")
 //                }
         cell.legueImage.image = UIImage(named: "1")
-
+        print("aya")
         return cell
     }
     
