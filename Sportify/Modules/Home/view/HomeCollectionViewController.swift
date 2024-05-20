@@ -11,29 +11,22 @@ import UIKit
 
 class HomeCollectionViewController: UICollectionViewController , UICollectionViewDelegateFlowLayout{
     
-    let testData = ["sport1","sports2","sports3","sports4"]
+    var sportTypes = ["Football", "Basketball", "Cricket" , "Tennis" ]
+
     override func viewDidLoad() {
         super.viewDidLoad()
-    print("hellllllo")
-      
+        
        let layout = UICollectionViewFlowLayout()
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.addSubview(collectionView)
-        
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        
-        
         collectionView.backgroundColor = UIColor.white
-        
         collectionView.register(CustomCell.self,forCellWithReuseIdentifier: "cell")
     }
-
-
-   
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -41,19 +34,13 @@ class HomeCollectionViewController: UICollectionViewController , UICollectionVie
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return testData.count
+        return sportTypes.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"cell", for: indexPath) as! CustomCell
         cell.images.image = UIImage(named:"4.png")
-
-        cell.configure(with: testData[indexPath.item])
-
-
-        
-
-    
+        cell.configure(with: sportTypes[indexPath.item])
         return cell
     }
     
@@ -68,7 +55,8 @@ class HomeCollectionViewController: UICollectionViewController , UICollectionVie
             guard let secondVC = secondStoryboard.instantiateViewController(withIdentifier: "SecondViewControllerIdentifier") as? LeguesTableViewController else {
                 return
             }
-        //secondVC.modalPresentationStyle = .fullScreen
+        secondVC.sportType = sportTypes[indexPath.row].lowercased()
+
         navigationController?.pushViewController(secondVC, animated: true)
     }
   
@@ -78,11 +66,9 @@ class HomeCollectionViewController: UICollectionViewController , UICollectionVie
 class CustomCell :UICollectionViewCell{
     let images = UIImageView()
       let label = UILabel()
-
       override init(frame: CGRect) {
           super.init(frame: frame)
-
-          // Add the image view
+          
           addSubview(images)
           images.translatesAutoresizingMaskIntoConstraints = false
           images.topAnchor.constraint(equalTo: topAnchor).isActive = true
@@ -90,7 +76,6 @@ class CustomCell :UICollectionViewCell{
           images.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
           images.heightAnchor.constraint(equalToConstant: 200).isActive = true
 
-          // Add the label
           addSubview(label)
           label.translatesAutoresizingMaskIntoConstraints = false
           label.topAnchor.constraint(equalTo: images.bottomAnchor, constant: 8).isActive = true
@@ -98,7 +83,6 @@ class CustomCell :UICollectionViewCell{
           label.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
           label.heightAnchor.constraint(equalToConstant: 30).isActive = true
 
-          // Customize the label's appearance
           label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
           label.textColor = .black
           label.textAlignment = .center
@@ -111,7 +95,6 @@ class CustomCell :UICollectionViewCell{
           fatalError("init has been imp")
       }
 
-      // Set the label's text in the `cellForItemAt` method of the `HomeCollectionViewController`
       func configure(with text: String) {
           label.text = text
       }

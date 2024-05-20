@@ -8,16 +8,21 @@
 import UIKit
 import Kingfisher
 class LeguesTableViewController: UITableViewController {
-    let testData = ["sport1","sports2","sports3","sports4"]
+    var sportType : String?
     var viewModel = LeguesViewModel()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         
         tableView.register(UINib(nibName: "LeguesTableViewCell", bundle: nil), forCellReuseIdentifier: "LeguesTableViewCell")
+        
         bindViewModel()
+        print(viewModel.leagues.count)
+        print(sportType ?? "no data")
+        if let sportType = sportType {
+          viewModel.fetchLeagues(for: sportType)
+          }
 
     }
     private func bindViewModel() {
@@ -37,29 +42,25 @@ class LeguesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return testData.count
-        //viewModel.leagues.count
+        return viewModel.leagues.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LeguesTableViewCell", for: indexPath) as! LeguesTableViewCell
-       // let league = viewModel.leagues[indexPath.row]
-        cell.legueLabel.text = testData[indexPath.row]
-        //league.league_name
-//        if let logoURL = league.league_logo, let url = URL(string: logoURL) {
-//                    cell.legueImage.kf.setImage(with: url)
-//                } else {
-//                    cell.legueImage.image = UIImage(named: "1")
-//                }
-        cell.legueImage.image = UIImage(named: "1")
-        print("aya")
+        let league = viewModel.leagues[indexPath.row]
+        cell.legueLabel.text = league.league_name
+        if let logoURL = league.league_logo, let url = URL(string: logoURL) {
+                    cell.legueImage.kf.setImage(with: url)
+                } else {
+                    cell.legueImage.image = UIImage(named: "cup")
+                }
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
-   
-    
+
 }

@@ -15,7 +15,7 @@ class LeguesTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        makeImageCircular()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -23,5 +23,14 @@ class LeguesTableViewCell: UITableViewCell {
         
         
     }
+    override func layoutSubviews() {
+           super.layoutSubviews()
+           makeImageCircular()
+       }
+
+    func makeImageCircular() {
+        legueImage.layer.cornerRadius = 55
+            legueImage.layer.masksToBounds = true
+        }
     
 }
