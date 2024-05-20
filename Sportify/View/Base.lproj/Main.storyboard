@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="animation2"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="animation4"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
@@ -196,6 +196,9 @@
             <point key="canvasLocation" x="1751.9083969465648" y="-425.35211267605638"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="ZCL-O1-H5M"/>
+    </designables>
     <resources>
         <image name="basketball-player" width="32" height="32"/>
         <image name="favorite" width="32" height="32"/>
