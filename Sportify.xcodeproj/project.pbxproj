@@ -119,6 +119,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		030D2A972BFCC7F600BF4B7E /* Legues Details */ = {
+			isa = PBXGroup;
+			children = (
+				030D2A992BFCC81400BF4B7E /* viewModel */,
+				030D2A982BFCC80B00BF4B7E /* view */,
+			);
+			path = "Legues Details";
+			sourceTree = "<group>";
+		};
+		030D2A982BFCC80B00BF4B7E /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		030D2A992BFCC81400BF4B7E /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
 		031981782BF482DF008ECF00 = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +228,7 @@
 		03D6B99E2BF6651600095008 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				030D2A972BFCC7F600BF4B7E /* Legues Details */,
 				03D6B9A92BF6687200095008 /* Legues */,
 				03D6B9A62BF6676F00095008 /* OnBording Screen */,
 				03D6B9A42BF6673A00095008 /* Splash Screen */,
