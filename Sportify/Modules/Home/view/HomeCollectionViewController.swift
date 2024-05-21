@@ -12,20 +12,25 @@ import UIKit
 class HomeCollectionViewController: UICollectionViewController , UICollectionViewDelegateFlowLayout{
     
     var sportTypes = ["Football", "Basketball", "Cricket" , "Tennis" ]
-
+    let imageNames = ["football.jpg", "BasketBall.jpg", "cricket.jpg","teniss.jpg"]
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       let layout = UICollectionViewFlowLayout()
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        view.addSubview(collectionView)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        collectionView.backgroundColor = UIColor.white
-        collectionView.register(CustomCell.self,forCellWithReuseIdentifier: "cell")
+        let layout = UICollectionViewFlowLayout()
+            collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+            view.addSubview(collectionView)
+            collectionView.translatesAutoresizingMaskIntoConstraints = false
+            
+            let spacing: CGFloat = 80
+        
+            collectionView.contentInset = UIEdgeInsets(top: spacing, left: 10, bottom: 0, right: 10)
+            
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+            collectionView.backgroundColor = UIColor.white
+            collectionView.register(CustomCell.self, forCellWithReuseIdentifier: "cell")
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -39,13 +44,13 @@ class HomeCollectionViewController: UICollectionViewController , UICollectionVie
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"cell", for: indexPath) as! CustomCell
-        cell.images.image = UIImage(named:"4.png")
-        cell.configure(with: sportTypes[indexPath.item])
+        cell.images.image = UIImage(named:imageNames[indexPath.row])
+        cell.label(with: sportTypes[indexPath.item])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width/2-20, height: 250)
+        return CGSize(width: view.frame.width/2-20, height: 270)
     }
 
 
@@ -68,7 +73,7 @@ class CustomCell :UICollectionViewCell{
       let label = UILabel()
       override init(frame: CGRect) {
           super.init(frame: frame)
-          
+         
           addSubview(images)
           images.translatesAutoresizingMaskIntoConstraints = false
           images.topAnchor.constraint(equalTo: topAnchor).isActive = true
@@ -83,7 +88,7 @@ class CustomCell :UICollectionViewCell{
           label.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
           label.heightAnchor.constraint(equalToConstant: 30).isActive = true
 
-          label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+          label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
           label.textColor = .black
           label.textAlignment = .center
 
@@ -95,7 +100,7 @@ class CustomCell :UICollectionViewCell{
           fatalError("init has been imp")
       }
 
-      func configure(with text: String) {
+      func label(with text: String) {
           label.text = text
       }
 }

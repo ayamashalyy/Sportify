@@ -29,6 +29,7 @@
 		03E7B6A92BF63B3F000BC5DF /* animation3.json in Resources */ = {isa = PBXBuildFile; fileRef = 03E7B6A82BF63B3F000BC5DF /* animation3.json */; };
 		03F575022BF955150088F0C3 /* LeguesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F575002BF955150088F0C3 /* LeguesTableViewCell.swift */; };
 		03F575032BF955150088F0C3 /* LeguesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03F575012BF955150088F0C3 /* LeguesTableViewCell.xib */; };
+		6CC1EC302BFBFF9F00F606AE /* animation4.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CC1EC2F2BFBFF9F00F606AE /* animation4.json */; };
 		740F0B0F204BA81169AF8739 /* Pods_Sportify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFD5532CDDBCC36AD3E3094 /* Pods_Sportify.framework */; };
 		CF5929F45920E3CC3A66FABC /* Pods_Sportify_SportifyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708F5F450FA59FCF8C53E6F2 /* Pods_Sportify_SportifyUITests.framework */; };
 		D8E245C85C5FCFDB5421674A /* Pods_SportifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E574995E63AA889511CB8772 /* Pods_SportifyTests.framework */; };
@@ -82,6 +83,7 @@
 		48DD1672BE117ED6C551C984 /* Pods-Sportify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportify.debug.xcconfig"; path = "Target Support Files/Pods-Sportify/Pods-Sportify.debug.xcconfig"; sourceTree = "<group>"; };
 		663502EF2416ADBD10B5C57B /* Pods-SportifyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportifyTests.debug.xcconfig"; path = "Target Support Files/Pods-SportifyTests/Pods-SportifyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6A6D220563FAAA99113DB9AE /* Pods-Sportify-SportifyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportify-SportifyUITests.release.xcconfig"; path = "Target Support Files/Pods-Sportify-SportifyUITests/Pods-Sportify-SportifyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6CC1EC2F2BFBFF9F00F606AE /* animation4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation4.json; sourceTree = "<group>"; };
 		708F5F450FA59FCF8C53E6F2 /* Pods_Sportify_SportifyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportify_SportifyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC35F703BAAC1F831BB9252 /* Pods-Sportify-SportifyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportify-SportifyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Sportify-SportifyUITests/Pods-Sportify-SportifyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C8CF375FE8605E45ECA16403 /* Pods-Sportify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportify.release.xcconfig"; path = "Target Support Files/Pods-Sportify/Pods-Sportify.release.xcconfig"; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 		03D6B9A82BF6682900095008 /* Json */ = {
 			isa = PBXGroup;
 			children = (
+				6CC1EC2F2BFBFF9F00F606AE /* animation4.json */,
 				03E48EA82BF5526E00C8A955 /* animation2.json */,
 				03E7B6A82BF63B3F000BC5DF /* animation3.json */,
 			);
@@ -454,6 +457,7 @@
 				03D6B9AF2BF66C5600095008 /* Second.storyboard in Resources */,
 				031981942BF482E8008ECF00 /* LaunchScreen.storyboard in Resources */,
 				031981912BF482E8008ECF00 /* Assets.xcassets in Resources */,
+				6CC1EC302BFBFF9F00F606AE /* animation4.json in Resources */,
 				03E7B6A92BF63B3F000BC5DF /* animation3.json in Resources */,
 				0319818C2BF482E0008ECF00 /* Main.storyboard in Resources */,
 				03F575032BF955150088F0C3 /* LeguesTableViewCell.xib in Resources */,
