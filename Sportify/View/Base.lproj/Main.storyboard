@@ -75,7 +75,7 @@
                             <outlet property="delegate" destination="UUO-U5-Orj" id="BOk-kS-hdB"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Sports" id="Eps-Md-Ixc"/>
+                    <navigationItem key="navigationItem" title="Sports" largeTitleDisplayMode="always" id="Eps-Md-Ixc"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aM6-mj-LRb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -183,7 +183,6 @@
                     <tabBarItem key="tabBarItem" title="Home" image="basketball-player" id="bUL-Nz-drk"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vak-jz-VkG">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -196,9 +195,6 @@
             <point key="canvasLocation" x="1751.9083969465648" y="-425.35211267605638"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="ZCL-O1-H5M"/>
-    </designables>
     <resources>
         <image name="basketball-player" width="32" height="32"/>
         <image name="favorite" width="32" height="32"/>
