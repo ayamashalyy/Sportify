@@ -20,6 +20,8 @@
 		035EFF732BF973F500B53B23 /* LegueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035EFF722BF973F500B53B23 /* LegueModel.swift */; };
 		035EFF752BF9852000B53B23 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035EFF742BF9852000B53B23 /* NetworkManager.swift */; };
 		035EFF772BF991C800B53B23 /* LeguesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035EFF762BF991C800B53B23 /* LeguesViewModel.swift */; };
+		03D0A4292BFD515C00652079 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D0A4282BFD515C00652079 /* test.swift */; };
+		03D0A42B2BFD517D00652079 /* testModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D0A42A2BFD517D00652079 /* testModel.swift */; };
 		03D6B9AF2BF66C5600095008 /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03D6B9AE2BF66C5600095008 /* Second.storyboard */; };
 		03D6B9B22BF66D9600095008 /* LeguesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D6B9B02BF66D9600095008 /* LeguesTableViewController.swift */; };
 		03E48EA62BF54F5A00C8A955 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E48EA42BF54F5A00C8A955 /* HomeCollectionViewController.swift */; };
@@ -70,6 +72,8 @@
 		035EFF722BF973F500B53B23 /* LegueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegueModel.swift; sourceTree = "<group>"; };
 		035EFF742BF9852000B53B23 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		035EFF762BF991C800B53B23 /* LeguesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeguesViewModel.swift; sourceTree = "<group>"; };
+		03D0A4282BFD515C00652079 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		03D0A42A2BFD517D00652079 /* testModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testModel.swift; sourceTree = "<group>"; };
 		03D6B9AE2BF66C5600095008 /* Second.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Second.storyboard; sourceTree = "<group>"; };
 		03D6B9B02BF66D9600095008 /* LeguesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeguesTableViewController.swift; sourceTree = "<group>"; };
 		03E48EA42BF54F5A00C8A955 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 		030D2A982BFCC80B00BF4B7E /* view */ = {
 			isa = PBXGroup;
 			children = (
+				03D0A4282BFD515C00652079 /* test.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 		030D2A992BFCC81400BF4B7E /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
+				03D0A42A2BFD517D00652079 /* testModel.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -616,11 +622,13 @@
 				035EFF752BF9852000B53B23 /* NetworkManager.swift in Sources */,
 				031981892BF482E0008ECF00 /* ViewController.swift in Sources */,
 				0319818F2BF482E0008ECF00 /* Sportify.xcdatamodeld in Sources */,
+				03D0A4292BFD515C00652079 /* test.swift in Sources */,
 				035EFF732BF973F500B53B23 /* LegueModel.swift in Sources */,
 				031981852BF482E0008ECF00 /* AppDelegate.swift in Sources */,
 				035EFF772BF991C800B53B23 /* LeguesViewModel.swift in Sources */,
 				03E48EA62BF54F5A00C8A955 /* HomeCollectionViewController.swift in Sources */,
 				031981872BF482E0008ECF00 /* SceneDelegate.swift in Sources */,
+				03D0A42B2BFD517D00652079 /* testModel.swift in Sources */,
 				03E48EAB2BF56C9200C8A955 /* OnBoradingViewController.swift in Sources */,
 				03F575022BF955150088F0C3 /* LeguesTableViewCell.swift in Sources */,
 				03D6B9B22BF66D9600095008 /* LeguesTableViewController.swift in Sources */,
