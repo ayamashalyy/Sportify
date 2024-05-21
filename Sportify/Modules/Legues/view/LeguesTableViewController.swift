@@ -52,8 +52,11 @@ class LeguesTableViewController: UITableViewController {
         cell.legueLabel.text = league.league_name
         if let logoURL = league.league_logo, let url = URL(string: logoURL) {
                     cell.legueImage.kf.setImage(with: url)
+            cell.legueImage.layer.cornerRadius = cell.legueImage.frame.height / 2
+
                 } else {
                     cell.legueImage.image = UIImage(named: "cup")
+                    cell.legueImage.layer.cornerRadius = cell.legueImage.frame.height / 2
                 }
         
         return cell
@@ -63,4 +66,13 @@ class LeguesTableViewController: UITableViewController {
         return 100
     }
 
+}
+
+extension LeguesTableViewController {
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.layer.transform = CATransform3DMakeScale(0.1, 0.1, 1.0)
+        UIView.animate(withDuration: 0.5) {
+            cell.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
+        }
+    }
 }
