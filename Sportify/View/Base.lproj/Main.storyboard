@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q93-tl-CgC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q93-tl-CgC">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -120,6 +119,21 @@
             </objects>
             <point key="canvasLocation" x="1711" y="268"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="BNB-pg-0ZI">
+            <objects>
+                <viewController id="r3V-gL-Kzj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dhv-Os-N17">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="xxn-BK-aZD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TZj-Vo-TEv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2723" y="254"/>
+        </scene>
         <!--Container Page View Controller-->
         <scene sceneID="THn-ZN-Oty">
             <objects>
@@ -183,6 +197,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="basketball-player" id="bUL-Nz-drk"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vak-jz-VkG">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -195,6 +210,9 @@
             <point key="canvasLocation" x="1751.9083969465648" y="-425.35211267605638"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="ZCL-O1-H5M"/>
+    </designables>
     <resources>
         <image name="basketball-player" width="32" height="32"/>
         <image name="favorite" width="32" height="32"/>
