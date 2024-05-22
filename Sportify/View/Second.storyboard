@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kMX-b5-DWg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="btl-j1-fXx">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-65" y="-27"/>
         </scene>
-        <!--Legues Table View Controller-->
+        <!--All Legues-->
         <scene sceneID="d4P-kg-wxb">
             <objects>
                 <tableViewController storyboardIdentifier="SecondViewControllerIdentifier" id="kMX-b5-DWg" customClass="LeguesTableViewController" customModule="Sportify" customModuleProvider="target" sceneMemberID="viewController">
@@ -46,15 +48,105 @@
                             <outlet property="delegate" destination="kMX-b5-DWg" id="s53-Hq-LIg"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="All Legues" id="Nhv-E8-oGd"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gOn-ma-7aE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="822" y="-27"/>
+            <point key="canvasLocation" x="1747.3282442748091" y="-27.464788732394368"/>
+        </scene>
+        <!--Legues Details Collection View Controller-->
+        <scene sceneID="Bls-cD-Aua">
+            <objects>
+                <collectionViewController storyboardIdentifier="LegueDetailsViewController" id="AIG-BK-HSc" customClass="LeguesDetailsCollectionViewController" customModule="Sportify" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="NT0-wf-kHr">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="50g-JY-fvH">
+                            <size key="itemSize" width="390" height="230"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell1" id="NPi-g1-Qh9">
+                                <rect key="frame" x="1.6666666666666667" y="0.0" width="390" height="230"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0Gm-H1-811">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="230"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vlm-do-OID">
+                                            <rect key="frame" x="89" y="37" width="99" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Legue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBr-jP-2dz">
+                                            <rect key="frame" x="89" y="0.0" width="236" height="20.333333333333332"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="20/5/2024" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVV-fR-YLg">
+                                            <rect key="frame" x="225" y="37" width="100" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="vlm-do-OID" firstAttribute="leading" secondItem="0Gm-H1-811" secondAttribute="leading" constant="89" id="7tC-NR-TRM"/>
+                                        <constraint firstItem="zBr-jP-2dz" firstAttribute="leading" secondItem="0Gm-H1-811" secondAttribute="leading" constant="89" id="8bN-av-eeK"/>
+                                        <constraint firstAttribute="trailing" secondItem="zBr-jP-2dz" secondAttribute="trailing" constant="65" id="9qx-kG-RzO"/>
+                                        <constraint firstItem="vlm-do-OID" firstAttribute="top" secondItem="zBr-jP-2dz" secondAttribute="bottom" constant="16.670000000000002" id="MPW-wC-Yvb"/>
+                                        <constraint firstItem="nVV-fR-YLg" firstAttribute="leading" secondItem="vlm-do-OID" secondAttribute="trailing" constant="37" id="Rs4-Gt-qEa"/>
+                                        <constraint firstItem="zBr-jP-2dz" firstAttribute="top" secondItem="0Gm-H1-811" secondAttribute="top" id="Sgf-Xp-Bbh"/>
+                                        <constraint firstItem="nVV-fR-YLg" firstAttribute="trailing" secondItem="zBr-jP-2dz" secondAttribute="trailing" id="UNg-6I-ioR"/>
+                                        <constraint firstItem="vlm-do-OID" firstAttribute="leading" secondItem="zBr-jP-2dz" secondAttribute="leading" id="Xly-3E-yOV"/>
+                                        <constraint firstItem="nVV-fR-YLg" firstAttribute="top" secondItem="zBr-jP-2dz" secondAttribute="bottom" constant="16.670000000000002" id="mww-HZ-pd6"/>
+                                        <constraint firstAttribute="trailing" secondItem="vlm-do-OID" secondAttribute="trailing" constant="202" id="xzT-Oe-EHd"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <size key="customSize" width="390" height="230"/>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="AIG-BK-HSc" id="2P2-k2-dvl"/>
+                            <outlet property="delegate" destination="AIG-BK-HSc" id="NYL-7h-tHt"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oep-kj-obh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2638.9312977099235" y="-27.464788732394368"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sYB-bf-v4z">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="btl-j1-fXx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Jh-De-Nah">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kMX-b5-DWg" kind="relationship" relationship="rootViewController" id="VoQ-T0-uJR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M8M-la-tmW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="820.61068702290072" y="-27.464788732394368"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -75,4 +75,10 @@ extension LeguesTableViewController {
             cell.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
         }
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let legueDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "LegueDetailsViewController") as! LeguesDetailsCollectionViewController
+       
+        self.navigationController?.pushViewController(legueDetailVC, animated: true)
+    }
 }
