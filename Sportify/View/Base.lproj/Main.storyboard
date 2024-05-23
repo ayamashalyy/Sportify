@@ -282,6 +282,9 @@
             <point key="canvasLocation" x="1751.9083969465648" y="-425.35211267605638"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="ZCL-O1-H5M"/>
+    </designables>
     <resources>
         <image name="4" width="626" height="626"/>
         <image name="basketball-player" width="32" height="32"/>
