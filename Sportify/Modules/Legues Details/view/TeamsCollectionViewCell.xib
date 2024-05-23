@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="teamsCell" id="gTV-IL-0wX" customClass="TeamsCollectionViewCell" customModule="Sportify" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="cup" translatesAutoresizingMaskIntoConstraints="NO" id="CcP-vJ-XUJ">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="74.666666666666671"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rjq-uN-RTw">
+                        <rect key="frame" x="0.0" y="79.666666666666671" width="100" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="CcP-vJ-XUJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="AZb-ri-aJ4"/>
+                <constraint firstItem="Rjq-uN-RTw" firstAttribute="leading" secondItem="CcP-vJ-XUJ" secondAttribute="leading" id="BZ1-1P-MCa"/>
+                <constraint firstItem="Rjq-uN-RTw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="DYZ-zd-Qvx"/>
+                <constraint firstAttribute="trailing" secondItem="Rjq-uN-RTw" secondAttribute="trailing" id="JsX-jK-t4U"/>
+                <constraint firstItem="CcP-vJ-XUJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ot7-Wf-d7w"/>
+                <constraint firstItem="Rjq-uN-RTw" firstAttribute="centerX" secondItem="CcP-vJ-XUJ" secondAttribute="centerX" id="YYr-BS-iEW"/>
+                <constraint firstItem="Rjq-uN-RTw" firstAttribute="trailing" secondItem="CcP-vJ-XUJ" secondAttribute="trailing" id="dVI-4c-7CM"/>
+                <constraint firstItem="Rjq-uN-RTw" firstAttribute="centerX" secondItem="CcP-vJ-XUJ" secondAttribute="centerX" id="fNP-aB-7f6"/>
+                <constraint firstItem="Rjq-uN-RTw" firstAttribute="top" secondItem="CcP-vJ-XUJ" secondAttribute="bottom" constant="5" id="fnG-fm-GAh"/>
+                <constraint firstAttribute="trailing" secondItem="CcP-vJ-XUJ" secondAttribute="trailing" id="gWk-Sz-mQt"/>
+                <constraint firstAttribute="bottom" secondItem="Rjq-uN-RTw" secondAttribute="bottom" id="mAE-N2-pco"/>
+                <constraint firstItem="Rjq-uN-RTw" firstAttribute="centerX" secondItem="CcP-vJ-XUJ" secondAttribute="centerX" id="s7I-Xc-iCN"/>
+            </constraints>
+            <size key="customSize" width="141" height="140"/>
+            <connections>
+                <outlet property="teamLogo" destination="CcP-vJ-XUJ" id="BWE-vo-Jdc"/>
+                <outlet property="teamName" destination="Rjq-uN-RTw" id="q6A-Pb-fNE"/>
+            </connections>
+            <point key="canvasLocation" x="198.47328244274809" y="20.422535211267608"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="cup" width="640" height="640"/>
+    </resources>
+</document>

@@ -77,7 +77,7 @@ extension LeguesTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let legueDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "LegueDetailsViewController") as! LeguesDetailsCollectionViewController
+        let legueDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "LegueDetailsViewController") as! LegueDetailsViewController
        
         self.navigationController?.pushViewController(legueDetailVC, animated: true)
     }
