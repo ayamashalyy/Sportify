@@ -34,6 +34,7 @@
 		03E7B6A92BF63B3F000BC5DF /* animation3.json in Resources */ = {isa = PBXBuildFile; fileRef = 03E7B6A82BF63B3F000BC5DF /* animation3.json */; };
 		03F575022BF955150088F0C3 /* LeguesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F575002BF955150088F0C3 /* LeguesTableViewCell.swift */; };
 		03F575032BF955150088F0C3 /* LeguesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03F575012BF955150088F0C3 /* LeguesTableViewCell.xib */; };
+		03FE53DE2BFF6B0C0084FE51 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FE53DD2BFF6B0C0084FE51 /* DataBaseManager.swift */; };
 		6CC1EC302BFBFF9F00F606AE /* animation4.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CC1EC2F2BFBFF9F00F606AE /* animation4.json */; };
 		740F0B0F204BA81169AF8739 /* Pods_Sportify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFD5532CDDBCC36AD3E3094 /* Pods_Sportify.framework */; };
 		CF5929F45920E3CC3A66FABC /* Pods_Sportify_SportifyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708F5F450FA59FCF8C53E6F2 /* Pods_Sportify_SportifyUITests.framework */; };
@@ -89,6 +90,7 @@
 		03E7B6A82BF63B3F000BC5DF /* animation3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation3.json; sourceTree = "<group>"; };
 		03F575002BF955150088F0C3 /* LeguesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeguesTableViewCell.swift; sourceTree = "<group>"; };
 		03F575012BF955150088F0C3 /* LeguesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeguesTableViewCell.xib; sourceTree = "<group>"; };
+		03FE53DD2BFF6B0C0084FE51 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		2FFD5532CDDBCC36AD3E3094 /* Pods_Sportify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sportify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48DD1672BE117ED6C551C984 /* Pods-Sportify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sportify.debug.xcconfig"; path = "Target Support Files/Pods-Sportify/Pods-Sportify.debug.xcconfig"; sourceTree = "<group>"; };
 		663502EF2416ADBD10B5C57B /* Pods-SportifyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportifyTests.debug.xcconfig"; path = "Target Support Files/Pods-SportifyTests/Pods-SportifyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 		03D6B99E2BF6651600095008 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				03FE53DF2BFF7CE30084FE51 /* Favorites Leagues */,
 				032B05212BFD7067000651AE /* Team Details */,
 				030D2A972BFCC7F600BF4B7E /* Legues Details */,
 				03D6B9A92BF6687200095008 /* Legues */,
@@ -287,6 +290,7 @@
 		03D6B9A02BF6661800095008 /* DataBase Service */ = {
 			isa = PBXGroup;
 			children = (
+				03FE53DD2BFF6B0C0084FE51 /* DataBaseManager.swift */,
 			);
 			path = "DataBase Service";
 			sourceTree = "<group>";
@@ -383,6 +387,29 @@
 				035EFF762BF991C800B53B23 /* LeguesViewModel.swift */,
 			);
 			path = viewMode;
+			sourceTree = "<group>";
+		};
+		03FE53DF2BFF7CE30084FE51 /* Favorites Leagues */ = {
+			isa = PBXGroup;
+			children = (
+				03FE53E12BFF7D050084FE51 /* viewModel */,
+				03FE53E02BFF7CFB0084FE51 /* view */,
+			);
+			path = "Favorites Leagues";
+			sourceTree = "<group>";
+		};
+		03FE53E02BFF7CFB0084FE51 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		03FE53E12BFF7D050084FE51 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = viewModel;
 			sourceTree = "<group>";
 		};
 		34A4981DFEFE0D44B9D11828 /* Pods */ = {
@@ -659,6 +686,7 @@
 				03D0A4292BFD515C00652079 /* test.swift in Sources */,
 				032B05282BFD76C3000651AE /* PlayerTableViewCell.swift in Sources */,
 				035EFF732BF973F500B53B23 /* LegueModel.swift in Sources */,
+				03FE53DE2BFF6B0C0084FE51 /* DataBaseManager.swift in Sources */,
 				031981852BF482E0008ECF00 /* AppDelegate.swift in Sources */,
 				035EFF772BF991C800B53B23 /* LeguesViewModel.swift in Sources */,
 				03E48EA62BF54F5A00C8A955 /* HomeCollectionViewController.swift in Sources */,
