@@ -9,8 +9,14 @@ import UIKit
 
 class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource{
     
+    @IBAction func favBtn(_ sender: UIBarButtonItem) {
+        
+    }
     @IBOutlet weak var compCollectionView: UICollectionView!
     
+    @IBAction func backBtn(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         compCollectionView.dataSource = self
