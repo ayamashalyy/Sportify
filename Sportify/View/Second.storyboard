@@ -76,8 +76,16 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="71"/>
                                 <items>
                                     <navigationItem title="Title" id="I9K-DA-Kws">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="ly2-Bw-Snb"/>
-                                        <barButtonItem key="rightBarButtonItem" title="fav" id="1n7-ho-IZi"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="ly2-Bw-Snb">
+                                            <connections>
+                                                <action selector="backBtn:" destination="JwX-pY-rCs" id="a46-cX-Upc"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="fav" id="1n7-ho-IZi">
+                                            <connections>
+                                                <action selector="favBtn:" destination="JwX-pY-rCs" id="KjB-Dc-L6R"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

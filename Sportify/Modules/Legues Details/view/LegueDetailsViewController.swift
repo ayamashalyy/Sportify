@@ -9,8 +9,14 @@ import UIKit
 
 class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource{
     
+    @IBAction func favBtn(_ sender: UIBarButtonItem) {
+        
+    }
     @IBOutlet weak var compCollectionView: UICollectionView!
     
+    @IBAction func backBtn(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         compCollectionView.dataSource = self
@@ -59,25 +65,23 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
            
            return section
     }
-    func drawSectionTwo ()-> NSCollectionLayoutSection{
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1)
-            , heightDimension: .fractionalHeight(1))
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1)
-            , heightDimension: .absolute(180))
-            let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize
-            , subitems: [item])
-            group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0
-            , bottom: 8, trailing: 0)
-            
-            let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 15
-            , bottom: 10, trailing: 15)
-            
-            return section
-
-    
+    func drawSectionTwo() -> NSCollectionLayoutSection {
+        // Define item size
+        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(390), heightDimension: .absolute(120))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        // Define group size to account for item size and spacing
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(122)) // 120 (item height) + 2 (spacing)
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
+        
+        // Set group content insets to zero to ensure no extra spacing
+        group.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+        
+        // Create section and set content insets
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        
+        return section
     }
 
     func drawSectionThere() -> NSCollectionLayoutSection {
