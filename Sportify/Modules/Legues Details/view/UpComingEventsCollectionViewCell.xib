@@ -11,19 +11,109 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="upComingCell" id="gTV-IL-0wX" customClass="UpComingEventsCollectionViewCell" customModule="Sportify" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="533" height="222"/>
+            <rect key="frame" x="0.0" y="0.0" width="533" height="177"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="533" height="222"/>
+                <rect key="frame" x="0.0" y="0.0" width="533" height="177"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cup" translatesAutoresizingMaskIntoConstraints="NO" id="U0V-IU-kIA">
+                        <rect key="frame" x="10" y="50" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="Ut8-o3-aLh"/>
+                            <constraint firstAttribute="width" constant="100" id="pom-9U-nhu"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cimnasia LP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpV-wO-NSY">
+                        <rect key="frame" x="10" y="166" width="180" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cup" translatesAutoresizingMaskIntoConstraints="NO" id="ekk-Tr-yq6">
+                        <rect key="frame" x="423" y="50" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="a0a-pu-hq2"/>
+                            <constraint firstAttribute="height" constant="100" id="cdS-m5-HdO"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aaciring Clup" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oig-ZB-Bij">
+                        <rect key="frame" x="383" y="166" width="140" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNE-4T-2lX">
+                        <rect key="frame" x="118" y="60" width="297" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="29" id="KeE-Sv-eoj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13 FEB" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGa-WB-dWZ">
+                        <rect key="frame" x="118" y="104" width="297" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Argentinian Primera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8h-mJ-goo">
+                        <rect key="frame" x="20" y="10" width="493" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" systemColor="systemGrayColor"/>
-            <size key="customSize" width="533" height="222"/>
-            <point key="canvasLocation" x="228.24427480916029" y="30.985915492957748"/>
+            <constraints>
+                <constraint firstItem="oig-ZB-Bij" firstAttribute="top" secondItem="ekk-Tr-yq6" secondAttribute="bottom" constant="16" id="1FZ-2j-VlU"/>
+                <constraint firstItem="dNE-4T-2lX" firstAttribute="leading" secondItem="U0V-IU-kIA" secondAttribute="trailing" constant="8" id="4xu-ZN-85n"/>
+                <constraint firstItem="U0V-IU-kIA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="50" id="6Er-aT-7Ss"/>
+                <constraint firstItem="vpV-wO-NSY" firstAttribute="trailing" secondItem="U0V-IU-kIA" secondAttribute="trailing" constant="80" id="6UG-u6-hJU"/>
+                <constraint firstItem="W8h-mJ-goo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="FgD-D3-16z"/>
+                <constraint firstItem="ekk-Tr-yq6" firstAttribute="leading" secondItem="dNE-4T-2lX" secondAttribute="trailing" constant="8" id="K1O-H6-Mla"/>
+                <constraint firstItem="oig-ZB-Bij" firstAttribute="leading" secondItem="ekk-Tr-yq6" secondAttribute="leading" constant="-40" id="Mzz-Ix-k5S"/>
+                <constraint firstItem="vpV-wO-NSY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Rzf-xW-7Am"/>
+                <constraint firstAttribute="trailing" secondItem="W8h-mJ-goo" secondAttribute="trailing" constant="20" id="UV8-hu-VOe"/>
+                <constraint firstItem="ekk-Tr-yq6" firstAttribute="leading" secondItem="NGa-WB-dWZ" secondAttribute="trailing" constant="8" id="b7b-aI-osM"/>
+                <constraint firstItem="vpV-wO-NSY" firstAttribute="top" secondItem="U0V-IU-kIA" secondAttribute="bottom" constant="16" id="eTw-jl-Xmf"/>
+                <constraint firstAttribute="trailing" secondItem="oig-ZB-Bij" secondAttribute="trailing" constant="10" id="fM3-YH-geM"/>
+                <constraint firstItem="U0V-IU-kIA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="gMJ-e5-5gl"/>
+                <constraint firstItem="ekk-Tr-yq6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="50" id="j0z-xz-KEK"/>
+                <constraint firstItem="NGa-WB-dWZ" firstAttribute="top" secondItem="dNE-4T-2lX" secondAttribute="bottom" constant="15" id="kKe-g7-dLc"/>
+                <constraint firstItem="NGa-WB-dWZ" firstAttribute="leading" secondItem="U0V-IU-kIA" secondAttribute="trailing" constant="8" id="qZd-IF-YL1"/>
+                <constraint firstItem="dNE-4T-2lX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="60" id="tNd-mh-wMP"/>
+                <constraint firstItem="W8h-mJ-goo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="yLy-lt-vgK"/>
+                <constraint firstAttribute="trailing" secondItem="ekk-Tr-yq6" secondAttribute="trailing" constant="10" id="zEu-H1-yw9"/>
+            </constraints>
+            <size key="customSize" width="533" height="177"/>
+            <connections>
+                <outlet property="eventDate" destination="NGa-WB-dWZ" id="zjP-Op-14N"/>
+                <outlet property="eventName" destination="W8h-mJ-goo" id="jIr-7Z-k0W"/>
+                <outlet property="eventTime" destination="dNE-4T-2lX" id="neQ-o2-I03"/>
+                <outlet property="team1_logo" destination="U0V-IU-kIA" id="E5R-Q1-8jQ"/>
+                <outlet property="team1_name" destination="vpV-wO-NSY" id="dSy-TF-IRA"/>
+                <outlet property="team2_logo" destination="ekk-Tr-yq6" id="fja-Y0-RzM"/>
+                <outlet property="team2_name" destination="oig-ZB-Bij" id="BX9-1Q-iwR"/>
+            </connections>
+            <point key="canvasLocation" x="228.24427480916029" y="15.140845070422536"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="cup" width="640" height="640"/>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

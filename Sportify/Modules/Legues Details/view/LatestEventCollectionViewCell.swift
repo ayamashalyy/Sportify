@@ -20,7 +20,7 @@ class LatestEventCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var team2Logo: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+       
     }
 
 }
