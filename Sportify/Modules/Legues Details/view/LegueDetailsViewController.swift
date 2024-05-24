@@ -39,10 +39,10 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
     }
     
     func drawTheTopSection ()-> NSCollectionLayoutSection{
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.85))
            // 5 create item
            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-           item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
+           item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 15, bottom: 8, trailing: 50)
            
            // 4 group size
            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .absolute(300))
@@ -52,7 +52,7 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
            // 2 create section
            let section = NSCollectionLayoutSection(group: group)
            section.orthogonalScrollingBehavior = .continuous
-           section.contentInsets = NSDirectionalEdgeInsets(top: 32, leading: 0, bottom: 0, trailing: 0)
+           section.contentInsets = NSDirectionalEdgeInsets(top: 32, leading: 35, bottom: 0, trailing: 50)
            section.visibleItemsInvalidationHandler = { (items, offset, environment) in
                items.forEach { item in
                    let distanceFromCenter = abs((item.frame.midX - offset.x) - environment.container.contentSize.width / 2.0)
@@ -67,19 +67,19 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
     }
     func drawSectionTwo() -> NSCollectionLayoutSection {
         // Define item size
-        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(390), heightDimension: .absolute(120))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(360), heightDimension: .absolute(150))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         // Define group size to account for item size and spacing
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(122)) // 120 (item height) + 2 (spacing)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(150)) // 120 (item height) + 2 (spacing)
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
         
         // Set group content insets to zero to ensure no extra spacing
-        group.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 6, bottom: 20, trailing: 2)
         
         // Create section and set content insets
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 6, bottom: 20, trailing: 2)
         
         return section
     }
@@ -105,7 +105,7 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
         section.orthogonalScrollingBehavior = .continuous
         
         // Adjust content insets to zero for no spacing around the section
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 20, trailing: 0)
         
         // Adjust cell scaling
         section.visibleItemsInvalidationHandler = { (items, offset, environment) in
