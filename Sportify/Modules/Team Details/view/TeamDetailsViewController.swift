@@ -15,6 +15,7 @@ class TeamDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var teamImage: UIImageView!
     @IBOutlet weak var coachName: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    var team_key: Int?
     @IBAction func backBtn(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
     }
@@ -35,7 +36,6 @@ class TeamDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerTableViewCell", for: indexPath) as! PlayerTableViewCell
         cell.playerImage?.image = UIImage(named:"1" )
-       // cell.playerName?.text = "Aya"
         return cell
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

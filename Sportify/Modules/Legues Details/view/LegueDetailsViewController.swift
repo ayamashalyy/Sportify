@@ -137,8 +137,10 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let teamData = legueDetailsViewModel.teamData[indexPath.row]
         if let cell = collectionView.cellForItem(at: indexPath) as? TeamsCollectionViewCell {
             if let teamDetailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TeamDetailsViewController") as? TeamDetailsViewController {
+                teamDetailsVC.team_key = teamData.team_key
                 teamDetailsVC.modalPresentationStyle = .fullScreen
                 present(teamDetailsVC, animated: true, completion: nil)
             }
@@ -188,6 +190,12 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
                 } else {
                     cell.team2Logo.image = UIImage(named: "cup.jpeg")
                 }
+                if let goalScorers = leagueDetails.goal_scorers {
+                              let scores = goalScorers.compactMap { $0.score }
+                              cell.score.text = scores.joined(separator: ", ")
+                          } else {
+                              cell.score.text = "No scores available"
+                          }
                 cell.layer.cornerRadius = 25
                 return cell
             }
@@ -209,7 +217,6 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
             fatalError("Invalid section")
         }
 
-        // If for some reason none of the cases match, return a default cell
         return UICollectionViewCell()
     }
     
