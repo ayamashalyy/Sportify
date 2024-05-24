@@ -52,7 +52,6 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
                 item.transform = CGAffineTransform(scaleX: scale, y: scale)
             }
         }
-        
         return section
     }
     func drawSectionTwo() -> NSCollectionLayoutSection {
