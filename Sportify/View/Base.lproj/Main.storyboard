@@ -113,7 +113,9 @@
                             <outlet property="delegate" destination="6Ik-yb-xob" id="qJa-sa-Nbs"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Favorites" image="favorite" id="XaR-Ec-J62"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="24" id="XaR-Ec-J62">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zO-6T-e1C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -273,6 +275,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="tintColor"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="qgy-mS-XK1" kind="relationship" relationship="viewControllers" id="EEN-5H-mYe"/>
@@ -287,7 +292,9 @@
         <scene sceneID="nCX-GO-AtR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qgy-mS-XK1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="21" id="bUL-Nz-drk"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="22" id="bUL-Nz-drk">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vak-jz-VkG">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -307,12 +314,15 @@
         <designable name="ZCL-O1-H5M"/>
     </designables>
     <resources>
-        <image name="21" width="32" height="32"/>
+        <image name="22" width="32" height="32"/>
+        <image name="24" width="32" height="32"/>
         <image name="4" width="626" height="626"/>
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
-        <image name="favorite" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
