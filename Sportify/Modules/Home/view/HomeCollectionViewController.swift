@@ -12,7 +12,7 @@ import UIKit
 class HomeCollectionViewController: UICollectionViewController , UICollectionViewDelegateFlowLayout{
     
     var sportTypes = ["Football", "Basketball", "Cricket" , "Tennis" ]
-    let imageNames = ["football.jpg", "BasketBall.jpg", "cricket.jpg","teniss.jpg"]
+    let imageNames = ["18.jpg", "11.jpg", "19.jpg","10.jpg"]
     override func viewDidLoad() {
         super.viewDidLoad()
         
