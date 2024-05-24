@@ -8,6 +8,8 @@
 import UIKit
 
 class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource{
+    var legueDetailsViewModel = LeguesDetailsViewModel()
+    var leagueId : Int?
     
     @IBAction func favBtn(_ sender: UIBarButtonItem) {
         
@@ -29,12 +31,29 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
         compCollectionView.register(teamsCell, forCellWithReuseIdentifier: "teamsCell")
         let layout = UICollectionViewCompositionalLayout { [weak self] sectionIndex, environment in
             guard let self = self else { return nil }
-            return self.drawSection(for: sectionIndex)
+            return self.drawSections(for: sectionIndex)
         }
         compCollectionView.setCollectionViewLayout(layout, animated: true)
+        
+        bindViewModel()
+        print(legueDetailsViewModel.legueDetails.count)
+        print(leagueId ?? "no data")
+        if let leagueId = leagueId {
+            legueDetailsViewModel.fetchLegueDetails(for: leagueId)
+          }
     }
+    private func bindViewModel() {
+        legueDetailsViewModel.didUpdateLegueDetail = { [weak self] in
+            DispatchQueue.main.async {
+                self?.compCollectionView.reloadData()
+            }
+        }
+        legueDetailsViewModel.didFailWithError = { error in
+                    print("Failed to fetch leagues: \(error.localizedDescription)")
+                }
+            }
     
-    func drawTheTopSection ()-> NSCollectionLayoutSection{
+    func drawUpComingEventsCell ()-> NSCollectionLayoutSection{
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.75))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 15, bottom: 8, trailing: 50)
@@ -54,7 +73,7 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
         }
         return section
     }
-    func drawSectionTwo() -> NSCollectionLayoutSection {
+    func drawLatestEventsCell() -> NSCollectionLayoutSection {
         
         let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(360), heightDimension: .absolute(150))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -67,7 +86,7 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
         return section
     }
     
-    func drawSectionThere() -> NSCollectionLayoutSection {
+    func drawTeamsSectionCell() -> NSCollectionLayoutSection {
         
         let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(200), heightDimension: .absolute(200))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -86,19 +105,18 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
                 item.transform = CGAffineTransform(scaleX: scale, y: scale)
             }
         }
-        
         return section
     }
     
-    func drawSection(for sectionIndex: Int) -> NSCollectionLayoutSection {
+    func drawSections(for sectionIndex: Int) -> NSCollectionLayoutSection {
         switch sectionIndex {
         case 0:
-            return drawTheTopSection()
+            return drawUpComingEventsCell()
         case 1:
-            return drawSectionTwo()
+            return drawLatestEventsCell()
             
         default:
-            return drawSectionThere()
+            return drawTeamsSectionCell()
         }
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -106,7 +124,7 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return legueDetailsViewModel.legueDetails.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -121,17 +139,35 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: UICollectionViewCell
+        let leagueDetails = legueDetailsViewModel.legueDetails[indexPath.row]
         switch indexPath.section {
-        case 0:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "upComingCell", for: indexPath)
-        case 1:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "latestCell", for: indexPath)
-        case 2:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "teamsCell", for: indexPath)
-        default:
-            fatalError("Invalid section")
-        }
+          case 0:
+              let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "upComingCell", for: indexPath) as! UpComingEventsCollectionViewCell
+            cell.eventName.text = leagueDetails.league_name
+            cell.eventTime.text = leagueDetails.event_time
+            cell.eventDate.text = leagueDetails.event_date
+            cell.team1_name.text = leagueDetails.event_home_team
+            cell.team2_name.text = leagueDetails.event_away_team
+            let imageUrlOfTeam1 = leagueDetails.home_team_logo
+            let urlLogo1 = URL(string: imageUrlOfTeam1 ?? "cup.jpeg")
+            cell.team1_logo.kf.setImage(with: urlLogo1)
+            let imageUrlOfTeam2 = leagueDetails.away_team_logo
+            let urlLogo2 = URL(string: imageUrlOfTeam2 ?? "cup.jpeg")
+            cell.team2_logo.kf.setImage(with: urlLogo2)
+              return cell
+          case 1:
+              let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "latestCell", for: indexPath) as! LatestEventCollectionViewCell
+             
+              return cell
+          case 2:
+              let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "teamsCell", for: indexPath) as! TeamsCollectionViewCell
+    
+              return cell
+          default:
+              fatalError("Invalid section")
+          }
         cell.layer.cornerRadius = 25
+        print(leagueDetails)
         
         return cell
     }
