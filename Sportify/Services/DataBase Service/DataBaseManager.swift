@@ -25,7 +25,7 @@ class DataBaseManager : FavoriteProtocol {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
-        
+        print("test")
         let managedContext = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Leagues", in: managedContext)
         let myLeague = NSManagedObject(entity: entity!, insertInto: managedContext)
