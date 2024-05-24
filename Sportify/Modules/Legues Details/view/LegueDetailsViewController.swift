@@ -39,7 +39,9 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
         print(legueDetailsViewModel.legueDetails.count)
         print(leagueId ?? "no data")
         if let leagueId = leagueId {
-            legueDetailsViewModel.fetchLegueDetails(for: leagueId)
+            legueDetailsViewModel.fetchUpComingEventsLegueDetails(for: leagueId)
+            legueDetailsViewModel.fetchLastestEventsLegueDetails(for: leagueId)
+            legueDetailsViewModel.fetchTeams(for: leagueId)
           }
     }
     private func bindViewModel() {
@@ -124,7 +126,14 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return legueDetailsViewModel.legueDetails.count
+        switch section {
+        case 0, 1:
+            return legueDetailsViewModel.legueDetails.count
+        case 2:
+            return legueDetailsViewModel.teamData.count
+        default:
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -138,39 +147,72 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: UICollectionViewCell
-        let leagueDetails = legueDetailsViewModel.legueDetails[indexPath.row]
         switch indexPath.section {
-          case 0:
-              let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "upComingCell", for: indexPath) as! UpComingEventsCollectionViewCell
-            cell.eventName.text = leagueDetails.league_name
-            cell.eventTime.text = leagueDetails.event_time
-            cell.eventDate.text = leagueDetails.event_date
-            cell.team1_name.text = leagueDetails.event_home_team
-            cell.team2_name.text = leagueDetails.event_away_team
-            let imageUrlOfTeam1 = leagueDetails.home_team_logo
-            let urlLogo1 = URL(string: imageUrlOfTeam1 ?? "cup.jpeg")
-            cell.team1_logo.kf.setImage(with: urlLogo1)
-            let imageUrlOfTeam2 = leagueDetails.away_team_logo
-            let urlLogo2 = URL(string: imageUrlOfTeam2 ?? "cup.jpeg")
-            cell.team2_logo.kf.setImage(with: urlLogo2)
-              return cell
-          case 1:
-              let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "latestCell", for: indexPath) as! LatestEventCollectionViewCell
-             
-              return cell
-          case 2:
-              let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "teamsCell", for: indexPath) as! TeamsCollectionViewCell
-    
-              return cell
-          default:
-              fatalError("Invalid section")
-          }
-        cell.layer.cornerRadius = 25
-        print(leagueDetails)
-        
-        return cell
+        case 0:
+            if indexPath.row < legueDetailsViewModel.legueDetails.count {
+                let leagueDetails = legueDetailsViewModel.legueDetails[indexPath.row]
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "upComingCell", for: indexPath) as! UpComingEventsCollectionViewCell
+                cell.eventName.text = leagueDetails.league_name
+                cell.eventTime.text = leagueDetails.event_time
+                cell.eventDate.text = leagueDetails.event_date
+                cell.team1_name.text = leagueDetails.event_home_team
+                cell.team2_name.text = leagueDetails.event_away_team
+                if let imageUrlOfTeam1 = leagueDetails.home_team_logo, let urlLogo1 = URL(string: imageUrlOfTeam1) {
+                    cell.team1_logo.kf.setImage(with: urlLogo1)
+                } else {
+                    cell.team1_logo.image = UIImage(named: "cup.jpeg")
+                }
+                if let imageUrlOfTeam2 = leagueDetails.away_team_logo, let urlLogo2 = URL(string: imageUrlOfTeam2) {
+                    cell.team2_logo.kf.setImage(with: urlLogo2)
+                } else {
+                    cell.team2_logo.image = UIImage(named: "cup.jpeg")
+                }
+                cell.layer.cornerRadius = 25
+                return cell
+            }
+        case 1:
+            if indexPath.row < legueDetailsViewModel.legueDetails.count {
+                let leagueDetails = legueDetailsViewModel.legueDetails[indexPath.row]
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "latestCell", for: indexPath) as! LatestEventCollectionViewCell
+                cell.timeLatestEvent.text = leagueDetails.event_time
+                cell.dateLatestEvent.text = leagueDetails.event_date
+                cell.team1Name.text = leagueDetails.event_home_team
+                cell.team2Name.text = leagueDetails.event_away_team
+                if let imageUrlOfTeam1 = leagueDetails.home_team_logo, let urlLogo1 = URL(string: imageUrlOfTeam1) {
+                    cell.team1Logo.kf.setImage(with: urlLogo1)
+                } else {
+                    cell.team1Logo.image = UIImage(named: "cup.jpeg")
+                }
+                if let imageUrlOfTeam2 = leagueDetails.away_team_logo, let urlLogo2 = URL(string: imageUrlOfTeam2) {
+                    cell.team2Logo.kf.setImage(with: urlLogo2)
+                } else {
+                    cell.team2Logo.image = UIImage(named: "cup.jpeg")
+                }
+                cell.layer.cornerRadius = 25
+                return cell
+            }
+        case 2:
+            if indexPath.row < legueDetailsViewModel.teamData.count {
+                let teamData = legueDetailsViewModel.teamData[indexPath.row]
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "teamsCell", for: indexPath) as! TeamsCollectionViewCell
+                cell.teamName.text = teamData.team_name
+                if let imageUrlOfTeam = teamData.team_logo, let urlLogo = URL(string: imageUrlOfTeam) {
+                    cell.teamLogo.kf.setImage(with: urlLogo)
+                } else {
+                    cell.teamLogo.image = UIImage(named: "cup.jpeg")
+                }
+                cell.layer.cornerRadius = 25
+              
+                return cell
+            }
+        default:
+            fatalError("Invalid section")
+        }
+
+        // If for some reason none of the cases match, return a default cell
+        return UICollectionViewCell()
     }
     
-    
 }
+
+
