@@ -36,8 +36,8 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
         compCollectionView.setCollectionViewLayout(layout, animated: true)
         
         bindViewModel()
-        print(legueDetailsViewModel.legueDetails.count)
-        print(leagueId ?? "no data")
+//        print(legueDetailsViewModel.legueDetails.count)
+//        print(leagueId ?? "no data")
         if let leagueId = leagueId {
             legueDetailsViewModel.fetchUpComingEventsLegueDetails(for: leagueId)
             legueDetailsViewModel.fetchLastestEventsLegueDetails(for: leagueId)
@@ -190,12 +190,8 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
                 } else {
                     cell.team2Logo.image = UIImage(named: "cup.jpeg")
                 }
-                if let goalScorers = leagueDetails.goal_scorers {
-                              let scores = goalScorers.compactMap { $0.score }
-                              cell.score.text = scores.joined(separator: ", ")
-                          } else {
-                              cell.score.text = "No scores available"
-                          }
+                cell.score.text = leagueDetails.event_final_result
+                
                 cell.layer.cornerRadius = 25
                 return cell
             }
