@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JwX-pY-rCs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="btl-j1-fXx">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -61,7 +61,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Lae-Ur-Ozp">
-                                <rect key="frame" x="0.0" y="130" width="393" height="688"/>
+                                <rect key="frame" x="0.0" y="149" width="393" height="669"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vQh-nz-XNa">
                                     <size key="itemSize" width="128" height="128"/>
@@ -71,16 +71,24 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMB-OK-AaM">
-                                <rect key="frame" x="0.0" y="59" width="393" height="71"/>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMB-OK-AaM">
+                                <rect key="frame" x="0.0" y="59" width="393" height="90"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                    <offsetWrapper key="textShadowOffset" horizontal="100" vertical="100"/>
+                                </textAttributes>
                                 <items>
-                                    <navigationItem title="Title" id="I9K-DA-Kws">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="ly2-Bw-Snb">
+                                    <navigationItem title="Legues Details" leftItemsSupplementBackButton="YES" id="I9K-DA-Kws">
+                                        <barButtonItem key="backBarButtonItem" title="back" id="fxY-jr-ZBm"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" image="arrow.backward" catalog="system" id="ly2-Bw-Snb">
                                             <connections>
                                                 <action selector="backBtn:" destination="JwX-pY-rCs" id="a46-cX-Upc"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="fav" id="1n7-ho-IZi">
+                                        <barButtonItem key="rightBarButtonItem" title="fav" image="8" id="1n7-ho-IZi">
                                             <connections>
                                                 <action selector="favBtn:" destination="JwX-pY-rCs" id="KjB-Dc-L6R"/>
                                             </connections>
@@ -93,7 +101,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ZFy-Ta-Jc0" firstAttribute="trailing" secondItem="Lae-Ur-Ozp" secondAttribute="trailing" id="H6p-mP-9f3"/>
-                            <constraint firstItem="Lae-Ur-Ozp" firstAttribute="top" secondItem="ZFy-Ta-Jc0" secondAttribute="top" constant="71" id="I0q-2t-7jx"/>
+                            <constraint firstItem="Lae-Ur-Ozp" firstAttribute="top" secondItem="ZFy-Ta-Jc0" secondAttribute="top" constant="90" id="I0q-2t-7jx"/>
                             <constraint firstItem="NMB-OK-AaM" firstAttribute="top" secondItem="ZFy-Ta-Jc0" secondAttribute="top" id="Ndx-LJ-48b"/>
                             <constraint firstItem="NMB-OK-AaM" firstAttribute="trailing" secondItem="ZFy-Ta-Jc0" secondAttribute="trailing" id="YLI-Ac-mHn"/>
                             <constraint firstItem="Lae-Ur-Ozp" firstAttribute="top" secondItem="NMB-OK-AaM" secondAttribute="bottom" symbolic="YES" id="bHI-Iz-vHO"/>
@@ -130,6 +138,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="8" width="24" height="24"/>
+        <image name="arrow.backward" catalog="system" width="128" height="95"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

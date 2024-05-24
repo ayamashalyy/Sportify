@@ -15,6 +15,9 @@ class TeamDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var teamImage: UIImageView!
     @IBOutlet weak var coachName: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBAction func backBtn(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
+    }
     
    
     override func viewDidLoad() {
