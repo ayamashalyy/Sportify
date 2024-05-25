@@ -13,14 +13,26 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
     var league: LegueModel?
     var isFavorite: Bool = false
     
+    @IBOutlet weak var favButton: UIBarButtonItem!
     @IBAction func favBtn(_ sender: UIBarButtonItem) {
-          guard let league = league else {
-              print("No league model available to insert")
-              return
-          }
-          
-          legueDetailsViewModel.addLeagueToFavorites(league: league)
-      }
+        guard let league = league else {
+            print("No league model available to insert")
+            return
+        }
+        if isFavorite {
+            legueDetailsViewModel.removeLeagueFromFavorites(league: league)
+        } else {
+            legueDetailsViewModel.addLeagueToFavorites(league: league)
+        }
+        
+        isFavorite.toggle()
+        updateFavoriteButton()
+    }
+    
+    private func updateFavoriteButton() {
+        let imageName = isFavorite ? "8" : "9"
+        favButton.image = UIImage(systemName: imageName)
+    }
     
     @IBOutlet weak var compCollectionView: UICollectionView!
     
@@ -48,16 +60,17 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
             legueDetailsViewModel.fetchUpComingEventsLegueDetails(for: league.league_key!)
             legueDetailsViewModel.fetchLastestEventsLegueDetails(for: league.league_key!)
             legueDetailsViewModel.fetchTeams(for: league.league_key!) { result in
-                     switch result {
-                     case .success:
-                         print("Teams fetched successfully")
-                     case .failure(let error):
-                         print("Failed to fetch teams: \(error.localizedDescription)")
-                     }
-                 }
-             }
-         }
-         
+                switch result {
+                case .success:
+                    print("Teams fetched successfully")
+                case .failure(let error):
+                    print("Failed to fetch teams: \(error.localizedDescription)")
+                }
+            }
+            updateFavoriteButton()
+        }
+    }
+    
     private func bindViewModel() {
         legueDetailsViewModel.didUpdateLegueDetail = { [weak self] in
             DispatchQueue.main.async {
@@ -205,11 +218,11 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
                     cell.team2Logo.image = UIImage(named: "cup.jpeg")
                 }
                 cell.score.text = leagueDetails.event_final_result
-
-        
-
+                
+                
+                
                 cell.layer.cornerRadius = 25
-
+                
                 return cell
             }
         case 2:
@@ -223,7 +236,7 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
                     cell.teamLogo.image = UIImage(named: "cup.jpeg")
                 }
                 cell.layer.cornerRadius = 25
-
+                
                 return cell
             }
         default:
