@@ -191,8 +191,7 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
                     cell.team2Logo.image = UIImage(named: "cup.jpeg")
                 }
                 cell.score.text = leagueDetails.event_final_result
-                
-                cell.layer.cornerRadius = 25
+        
                 return cell
             }
         case 2:
@@ -206,7 +205,7 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
                     cell.teamLogo.image = UIImage(named: "cup.jpeg")
                 }
                 cell.layer.cornerRadius = 25
-              
+               
                 return cell
             }
         default:
