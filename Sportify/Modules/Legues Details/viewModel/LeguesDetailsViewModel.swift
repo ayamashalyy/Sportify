@@ -46,19 +46,22 @@ class LeguesDetailsViewModel {
         
     }
     
-    func fetchTeams(for leagueId:Int){
+    func fetchTeams(for leagueId: Int, completion: @escaping (Result<Void, Error>) -> Void) {
         let url = "https://apiv2.allsportsapi.com/football/?&met=Teams&leagueId=\(leagueId)&APIkey=\(apiKey)"
-        NetworkManager.shared.fetchData(from: url, responseType: TeamsResponse.self){
-            [weak self] result in
+        NetworkManager.shared.fetchData(from: url, responseType: TeamsResponse.self) { [weak self] result in
             switch result {
-            case .success(let teamResonse):
-                self?.teamData = teamResonse.result ?? []
+            case .success(let teamResponse):
+                self?.teamData = teamResponse.result ?? []
                 self?.didUpdateLegueDetail?()
+                completion(.success(()))
             case .failure(let error):
                 self?.didFailWithError?(error)
+                completion(.failure(error)) 
             }
         }
-        
     }
+
+
+
     
 }
