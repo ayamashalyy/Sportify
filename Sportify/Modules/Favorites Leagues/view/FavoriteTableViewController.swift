@@ -10,7 +10,8 @@ import Reachability
 
 class FavoriteTableViewController: UITableViewController {
     private var favoriteViewModel = FavoriteViewModel()
-    private var leagues: [LegueModel] = []
+    var leguesDetailsViewModel = LeguesDetailsViewModel()
+    var leagues: [LegueModel] = []
     private var noFavoritesImage: UIImageView?
     override func viewDidLoad() {
         tableView.delegate = self
@@ -93,6 +94,7 @@ class FavoriteTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let reachability = try? Reachability()
             
             if reachability?.connection == .wifi || reachability?.connection == .cellular {
