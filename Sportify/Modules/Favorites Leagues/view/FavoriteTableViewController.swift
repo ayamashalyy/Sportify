@@ -9,6 +9,7 @@ import UIKit
 
 class FavoriteTableViewController: UITableViewController {
     private var favoriteViewModel = FavoriteViewModel()
+    private var leagues: [LegueModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,5 +63,12 @@ class FavoriteTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
-    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let leagueToDelete = favoriteViewModel.leagues[indexPath.row]
+            favoriteViewModel.leagues.remove(at: indexPath.row)
+            favoriteViewModel.deleteLeague(league: leagueToDelete)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }
