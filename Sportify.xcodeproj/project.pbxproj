@@ -26,6 +26,7 @@
 		03D0A42B2BFD517D00652079 /* testModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D0A42A2BFD517D00652079 /* testModel.swift */; };
 		03D6B9AF2BF66C5600095008 /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03D6B9AE2BF66C5600095008 /* Second.storyboard */; };
 		03D6B9B22BF66D9600095008 /* LeguesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D6B9B02BF66D9600095008 /* LeguesTableViewController.swift */; };
+		03DF34072C01E0EB00FCD034 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF34062C01E0EA00FCD034 /* FavoriteTableViewController.swift */; };
 		03E48EA62BF54F5A00C8A955 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E48EA42BF54F5A00C8A955 /* HomeCollectionViewController.swift */; };
 		03E48EA92BF5526E00C8A955 /* animation2.json in Resources */ = {isa = PBXBuildFile; fileRef = 03E48EA82BF5526E00C8A955 /* animation2.json */; };
 		03E48EAB2BF56C9200C8A955 /* OnBoradingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E48EAA2BF56C9200C8A955 /* OnBoradingViewController.swift */; };
@@ -91,6 +92,7 @@
 		03D0A42A2BFD517D00652079 /* testModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testModel.swift; sourceTree = "<group>"; };
 		03D6B9AE2BF66C5600095008 /* Second.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Second.storyboard; sourceTree = "<group>"; };
 		03D6B9B02BF66D9600095008 /* LeguesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeguesTableViewController.swift; sourceTree = "<group>"; };
+		03DF34062C01E0EA00FCD034 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
 		03E48EA42BF54F5A00C8A955 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
 		03E48EA82BF5526E00C8A955 /* animation2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation2.json; sourceTree = "<group>"; };
 		03E48EAA2BF56C9200C8A955 /* OnBoradingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoradingViewController.swift; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 		03FE53E02BFF7CFB0084FE51 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				03DF34062C01E0EA00FCD034 /* FavoriteTableViewController.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -730,6 +733,7 @@
 				031981872BF482E0008ECF00 /* SceneDelegate.swift in Sources */,
 				03D0A42B2BFD517D00652079 /* testModel.swift in Sources */,
 				03E48EAB2BF56C9200C8A955 /* OnBoradingViewController.swift in Sources */,
+				03DF34072C01E0EB00FCD034 /* FavoriteTableViewController.swift in Sources */,
 				03F575022BF955150088F0C3 /* LeguesTableViewCell.swift in Sources */,
 				03D6B9B22BF66D9600095008 /* LeguesTableViewController.swift in Sources */,
 				032B05252BFD70C7000651AE /* TeamDetailsViewController.swift in Sources */,
