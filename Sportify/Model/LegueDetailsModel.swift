@@ -24,9 +24,7 @@ struct LegueDetailsModel :Codable{
     let league_key: Int?
     let home_team_logo: String?
     let away_team_logo: String?
-    let goal_scorers: [GoalScorer]?
+    let event_final_result: String?
 }
 
-struct GoalScorer :Codable{
-    let score: String?
-}
+
