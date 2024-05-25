@@ -41,9 +41,17 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
         if let leagueId = leagueId {
             legueDetailsViewModel.fetchUpComingEventsLegueDetails(for: leagueId)
             legueDetailsViewModel.fetchLastestEventsLegueDetails(for: leagueId)
-            legueDetailsViewModel.fetchTeams(for: leagueId)
-          }
-    }
+            legueDetailsViewModel.fetchTeams(for: leagueId) { result in
+                        switch result {
+                        case .success:
+                            print("Teams fetched successfully")
+                        case .failure(let error):
+                            print("Failed to fetch teams: \(error.localizedDescription)")
+                        }
+                    }
+                }
+        }
+    
     private func bindViewModel() {
         legueDetailsViewModel.didUpdateLegueDetail = { [weak self] in
             DispatchQueue.main.async {
@@ -51,9 +59,9 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
             }
         }
         legueDetailsViewModel.didFailWithError = { error in
-                    print("Failed to fetch leagues: \(error.localizedDescription)")
-                }
-            }
+            print("Failed to fetch leagues: \(error.localizedDescription)")
+        }
+    }
     
     func drawUpComingEventsCell ()-> NSCollectionLayoutSection{
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.75))
@@ -191,11 +199,11 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
                     cell.team2Logo.image = UIImage(named: "cup.jpeg")
                 }
                 if let goalScorers = leagueDetails.goal_scorers {
-                              let scores = goalScorers.compactMap { $0.score }
-                              cell.score.text = scores.joined(separator: ", ")
-                          } else {
-                              cell.score.text = "No scores available"
-                          }
+                    let scores = goalScorers.compactMap { $0.score }
+                    cell.score.text = scores.joined(separator: ", ")
+                } else {
+                    cell.score.text = "No scores available"
+                }
                 cell.layer.cornerRadius = 25
                 return cell
             }
@@ -210,13 +218,13 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
                     cell.teamLogo.image = UIImage(named: "cup.jpeg")
                 }
                 cell.layer.cornerRadius = 25
-              
+                
                 return cell
             }
         default:
             fatalError("Invalid section")
         }
-
+        
         return UICollectionViewCell()
     }
     
