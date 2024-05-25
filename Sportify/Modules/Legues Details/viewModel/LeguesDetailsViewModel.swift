@@ -68,6 +68,6 @@ class LeguesDetailsViewModel {
         print("Inserted league: \(league)")
     }
     func removeLeagueFromFavorites(league: LegueModel) {
-           DataBaseManager.shared.deleteLeagueItem(league: league)
-       }
+        DataBaseManager.shared.deleteLeagueFromFavorites(league: league)
+    }
 }
