@@ -60,6 +60,13 @@ class LeguesDetailsViewModel {
             }
         }
     }
+    
+    
+    func insertLeague(_ league: LegueModel) {
+        DataBaseManager.shared.insertLeague(league: league)
+        
+    }
+    
 
 
 

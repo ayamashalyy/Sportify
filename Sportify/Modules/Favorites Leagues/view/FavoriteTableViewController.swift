@@ -8,7 +8,8 @@
 import UIKit
 
 class FavoriteTableViewController: UITableViewController {
-    
+    private var favoriteViewModel = FavoriteViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self

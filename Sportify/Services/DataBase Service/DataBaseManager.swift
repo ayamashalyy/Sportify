@@ -10,9 +10,6 @@ import CoreData
 import UIKit
 
 
-
-
-
 protocol FavoriteProtocol : AnyObject{
     func insertLeague(league: LegueModel)
     func getAllLeagues()->[LegueModel]
@@ -20,6 +17,8 @@ protocol FavoriteProtocol : AnyObject{
 }
 
 class DataBaseManager : FavoriteProtocol {
+    static let shared = DataBaseManager()
+
     func insertLeague(league: LegueModel) {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
