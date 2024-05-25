@@ -19,7 +19,7 @@ class FavoriteViewModel {
   
     func deleteLeague(at index: Int) {
         let league = leagues[index]
-        DataBaseManager.shared.deleteLeagueItem(league: league)
+        DataBaseManager.shared.deleteLeagueFromFavorites(league: league)
         fetchLeaguesFromDB()
     }
     

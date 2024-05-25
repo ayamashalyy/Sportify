@@ -13,12 +13,12 @@ import UIKit
 protocol FavoriteProtocol : AnyObject{
     func insertLeague(league: LegueModel)
     func getAllLeagues()->[LegueModel]
-    func deleteLeagueItem(league: LegueModel)
+    func deleteLeagueFromFavorites(league: LegueModel)
 }
 
 class DataBaseManager : FavoriteProtocol {
     static let shared = DataBaseManager()
-
+    
     func insertLeague(league: LegueModel) {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -65,22 +65,35 @@ class DataBaseManager : FavoriteProtocol {
         }
     }
     
-    func deleteLeagueItem(league: LegueModel) {
+    func deleteLeagueFromFavorites(league: LegueModel) {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Leagues")
+        fetchRequest.predicate = NSPredicate(format: "league_key == %d", league.league_key!)
+        
+        do {
+            let results = try managedContext.fetch(fetchRequest)
+            
+            if let leagueObject = results.first {
+                managedContext.delete(leagueObject)
+                
+                do {
+                    try managedContext.save()
+                    print("League deleted successfully")
+                } catch let error as NSError {
+                    print("Error deleting league: \(error), \(error.userInfo)")
+                }
+            } else {
+                print("League not found in the database")
+            }
+        } catch let error as NSError {
+            print("Error fetching league: \(error), \(error.userInfo)")
+            
+        }
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
