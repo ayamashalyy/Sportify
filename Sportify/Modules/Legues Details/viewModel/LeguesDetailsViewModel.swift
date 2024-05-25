@@ -67,7 +67,16 @@ class LeguesDetailsViewModel {
         print("League inserted to favorites")
         print("Inserted league: \(league)")
     }
+    
     func removeLeagueFromFavorites(league: LegueModel) {
         DataBaseManager.shared.deleteLeagueFromFavorites(league: league)
     }
+
+
+    
+    func getLeagues() -> [LegueModel] {
+        return  DataBaseManager.shared.getAllLeagues()
+        
+    }
+
 }

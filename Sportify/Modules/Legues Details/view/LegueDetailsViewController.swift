@@ -11,7 +11,6 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
     var legueDetailsViewModel = LeguesDetailsViewModel()
     var leagueId : Int?
     var league: LegueModel?
-    var isFavorite: Bool = false
     
     @IBOutlet weak var favButton: UIBarButtonItem!
     @IBAction func favBtn(_ sender: UIBarButtonItem) {
@@ -19,20 +18,32 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
             print("No league model available to insert")
             return
         }
-        if isFavorite {
+        if isFav() {
             legueDetailsViewModel.removeLeagueFromFavorites(league: league)
+            favButton.image = UIImage(named : "8")
         } else {
             legueDetailsViewModel.addLeagueToFavorites(league: league)
+            favButton.image = UIImage(named : "9")
+            
         }
         
-        isFavorite.toggle()
-        updateFavoriteButton()
     }
     
-    private func updateFavoriteButton() {
-        let imageName = isFavorite ? "8" : "9"
-        favButton.image = UIImage(systemName: imageName)
+    
+    func isFav() -> Bool {
+        var isFavorite: Bool = false
+        let leagues = legueDetailsViewModel.getLeagues()
+        for le in leagues {
+            if league?.league_key == le.league_key{
+                isFavorite = true
+                favButton.image = UIImage(named : "9")
+                break
+            }
+        }
+        return isFavorite
     }
+    
+    
     
     @IBOutlet weak var compCollectionView: UICollectionView!
     
@@ -41,6 +52,7 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        isFav()
         compCollectionView.dataSource = self
         compCollectionView.delegate = self
         let upCompingCell = UINib(nibName: "UpComingEventsCollectionViewCell", bundle: nil)
@@ -67,11 +79,14 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
                     print("Failed to fetch teams: \(error.localizedDescription)")
                 }
             }
-            updateFavoriteButton()
+            
         }
     }
     
+    
+    
     private func bindViewModel() {
+        
         legueDetailsViewModel.didUpdateLegueDetail = { [weak self] in
             DispatchQueue.main.async {
                 self?.compCollectionView.reloadData()
@@ -83,6 +98,7 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
     }
     
     func drawUpComingEventsCell ()-> NSCollectionLayoutSection{
+        
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.75))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 15, bottom: 8, trailing: 50)
@@ -102,11 +118,12 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
         }
         return section
     }
+    
     func drawLatestEventsCell() -> NSCollectionLayoutSection {
         
         let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(360), heightDimension: .absolute(150))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(150)) // 120
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(150))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
         group.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 6, bottom: 20, trailing: 2)
         let section = NSCollectionLayoutSection(group: group)
@@ -138,6 +155,7 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
     }
     
     func drawSections(for sectionIndex: Int) -> NSCollectionLayoutSection {
+        
         switch sectionIndex {
         case 0:
             return drawUpComingEventsCell()
@@ -148,6 +166,7 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
             return drawTeamsSectionCell()
         }
     }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
@@ -164,6 +183,7 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         let teamData = legueDetailsViewModel.teamData[indexPath.row]
         if let cell = collectionView.cellForItem(at: indexPath) as? TeamsCollectionViewCell {
             if let teamDetailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TeamDetailsViewController") as? TeamDetailsViewController {
@@ -176,7 +196,9 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         switch indexPath.section {
+            
         case 0:
             if indexPath.row < legueDetailsViewModel.legueDetails.count {
                 let leagueDetails = legueDetailsViewModel.legueDetails[indexPath.row]
@@ -199,6 +221,7 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
                 cell.layer.cornerRadius = 25
                 return cell
             }
+            
         case 1:
             if indexPath.row < legueDetailsViewModel.legueDetails.count {
                 let leagueDetails = legueDetailsViewModel.legueDetails[indexPath.row]
@@ -225,6 +248,7 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
                 
                 return cell
             }
+            
         case 2:
             if indexPath.row < legueDetailsViewModel.teamData.count {
                 let teamData = legueDetailsViewModel.teamData[indexPath.row]
@@ -239,6 +263,7 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
                 
                 return cell
             }
+            
         default:
             fatalError("Invalid section")
         }
