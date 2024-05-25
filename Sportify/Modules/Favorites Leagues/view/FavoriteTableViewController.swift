@@ -10,14 +10,32 @@ import UIKit
 class FavoriteTableViewController: UITableViewController {
     private var favoriteViewModel = FavoriteViewModel()
     private var leagues: [LegueModel] = []
-    
+    private var noFavoritesImage: UIImageView?
     override func viewDidLoad() {
-        super.viewDidLoad()
         tableView.delegate = self
-        tableView.dataSource = self
-        
-        tableView.register(UINib(nibName: "LeguesTableViewCell", bundle: nil), forCellReuseIdentifier: "LeguesTableViewCell")
-        
+           tableView.dataSource = self
+           tableView.register(UINib(nibName: "LeguesTableViewCell", bundle: nil), forCellReuseIdentifier: "LeguesTableViewCell")
+
+           // Create the "no favorites" image
+           noFavoritesImage = UIImageView(image: UIImage(named: "noFav"))
+           noFavoritesImage?.contentMode = .scaleAspectFit
+           noFavoritesImage?.translatesAutoresizingMaskIntoConstraints = false
+           tableView.addSubview(noFavoritesImage!)
+
+           // Add constraints to center the image vertically and horizontally
+           let centerXConstraint = noFavoritesImage?.centerXAnchor.constraint(equalTo: tableView.centerXAnchor)
+           let centerYConstraint = noFavoritesImage?.centerYAnchor.constraint(equalTo: tableView.centerYAnchor)
+
+           // Add constraints to set the size of the image
+           let widthConstraint = noFavoritesImage?.widthAnchor.constraint(equalToConstant: 300)
+           let heightConstraint = noFavoritesImage?.heightAnchor.constraint(equalToConstant: 300)
+
+           if let centerXConstraint = centerXConstraint,
+              let centerYConstraint = centerYConstraint,
+              let widthConstraint = widthConstraint,
+              let heightConstraint = heightConstraint {
+               NSLayoutConstraint.activate([centerXConstraint, centerYConstraint, widthConstraint, heightConstraint])
+           }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +59,8 @@ class FavoriteTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favoriteViewModel.leagues.count
+        noFavoritesImage?.isHidden = favoriteViewModel.leagues.count > 0
+           return favoriteViewModel.leagues.count
     }
     
     
@@ -56,7 +75,7 @@ class FavoriteTableViewController: UITableViewController {
             cell.legueImage.image = UIImage(named: "cup")
             cell.legueImage.layer.cornerRadius = cell.legueImage.frame.height / 2
         }
-        
+        noFavoritesImage?.isHidden = true
         return cell
     }
     
