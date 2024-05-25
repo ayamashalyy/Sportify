@@ -90,4 +90,13 @@ class FavoriteTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            if let leagueDetailsVC = UIStoryboard(name: "Second", bundle: nil).instantiateViewController(withIdentifier: "LegueDetailsViewController") as?
+                LegueDetailsViewController{
+                leagueDetailsVC.modalPresentationStyle = .fullScreen
+                present(leagueDetailsVC, animated: true, completion: nil)
+            }
+        
+    }
 }
