@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Reachability
 
 class FavoriteTableViewController: UITableViewController {
     private var favoriteViewModel = FavoriteViewModel()
@@ -16,17 +17,17 @@ class FavoriteTableViewController: UITableViewController {
            tableView.dataSource = self
            tableView.register(UINib(nibName: "LeguesTableViewCell", bundle: nil), forCellReuseIdentifier: "LeguesTableViewCell")
 
-           // Create the "no favorites" image
+       
            noFavoritesImage = UIImageView(image: UIImage(named: "noFav"))
            noFavoritesImage?.contentMode = .scaleAspectFit
            noFavoritesImage?.translatesAutoresizingMaskIntoConstraints = false
            tableView.addSubview(noFavoritesImage!)
 
-           // Add constraints to center the image vertically and horizontally
+     
            let centerXConstraint = noFavoritesImage?.centerXAnchor.constraint(equalTo: tableView.centerXAnchor)
            let centerYConstraint = noFavoritesImage?.centerYAnchor.constraint(equalTo: tableView.centerYAnchor)
 
-           // Add constraints to set the size of the image
+     
            let widthConstraint = noFavoritesImage?.widthAnchor.constraint(equalToConstant: 300)
            let heightConstraint = noFavoritesImage?.heightAnchor.constraint(equalToConstant: 300)
 
@@ -92,10 +93,17 @@ class FavoriteTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            if let leagueDetailsVC = UIStoryboard(name: "Second", bundle: nil).instantiateViewController(withIdentifier: "LegueDetailsViewController") as?
-                LegueDetailsViewController{
-                leagueDetailsVC.modalPresentationStyle = .fullScreen
-                present(leagueDetailsVC, animated: true, completion: nil)
+        let reachability = try? Reachability()
+            
+            if reachability?.connection == .wifi || reachability?.connection == .cellular {
+                if let leagueDetailsVC = UIStoryboard(name: "Second", bundle: nil).instantiateViewController(withIdentifier: "LegueDetailsViewController") as? LegueDetailsViewController {
+                    leagueDetailsVC.modalPresentationStyle = .fullScreen
+                    present(leagueDetailsVC, animated: true, completion: nil)
+                }
+            } else {
+                let alert = UIAlertController(title: "No Internet Connection", message: "Please check your internet connection and try again.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                present(alert, animated: true, completion: nil)
             }
         
     }
