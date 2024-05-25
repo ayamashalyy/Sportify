@@ -10,10 +10,18 @@ import UIKit
 class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource{
     var legueDetailsViewModel = LeguesDetailsViewModel()
     var leagueId : Int?
+    var league: LegueModel?
+    var isFavorite: Bool = false
     
     @IBAction func favBtn(_ sender: UIBarButtonItem) {
-        
-    }
+          guard let league = league else {
+              print("No league model available to insert")
+              return
+          }
+          
+          legueDetailsViewModel.addLeagueToFavorites(league: league)
+      }
+    
     @IBOutlet weak var compCollectionView: UICollectionView!
     
     @IBAction func backBtn(_ sender: UIBarButtonItem) {
@@ -36,22 +44,20 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
         compCollectionView.setCollectionViewLayout(layout, animated: true)
         
         bindViewModel()
-//        print(legueDetailsViewModel.legueDetails.count)
-//        print(leagueId ?? "no data")
-        if let leagueId = leagueId {
-            legueDetailsViewModel.fetchUpComingEventsLegueDetails(for: leagueId)
-            legueDetailsViewModel.fetchLastestEventsLegueDetails(for: leagueId)
-            legueDetailsViewModel.fetchTeams(for: leagueId) { result in
-                        switch result {
-                        case .success:
-                            print("Teams fetched successfully")
-                        case .failure(let error):
-                            print("Failed to fetch teams: \(error.localizedDescription)")
-                        }
-                    }
-                }
-        }
-    
+        if let league = league {
+            legueDetailsViewModel.fetchUpComingEventsLegueDetails(for: league.league_key!)
+            legueDetailsViewModel.fetchLastestEventsLegueDetails(for: league.league_key!)
+            legueDetailsViewModel.fetchTeams(for: league.league_key!) { result in
+                     switch result {
+                     case .success:
+                         print("Teams fetched successfully")
+                     case .failure(let error):
+                         print("Failed to fetch teams: \(error.localizedDescription)")
+                     }
+                 }
+             }
+         }
+         
     private func bindViewModel() {
         legueDetailsViewModel.didUpdateLegueDetail = { [weak self] in
             DispatchQueue.main.async {

@@ -77,10 +77,10 @@ extension LeguesTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let legueDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "LegueDetailsViewController") as! LegueDetailsViewController
-        legueDetailVC.modalPresentationStyle = .fullScreen
-        let league = viewModel.leagues[indexPath.row]
-        legueDetailVC.leagueId = league.league_key
-        self.present(legueDetailVC, animated: true)
-    }
+           let legueDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "LegueDetailsViewController") as! LegueDetailsViewController
+           legueDetailVC.modalPresentationStyle = .fullScreen
+           let league = viewModel.leagues[indexPath.row]
+           legueDetailVC.league = league 
+           self.present(legueDetailVC, animated: true)
+       }
 }

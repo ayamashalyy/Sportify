@@ -56,19 +56,17 @@ class LeguesDetailsViewModel {
                 completion(.success(()))
             case .failure(let error):
                 self?.didFailWithError?(error)
-                completion(.failure(error)) 
+                completion(.failure(error))
             }
         }
     }
     
     
-    func insertLeague(_ league: LegueModel) {
+    func addLeagueToFavorites(league: LegueModel) {
         DataBaseManager.shared.insertLeague(league: league)
-        
+        print("League inserted to favorites")
+        print("Inserted league: \(league)")
     }
     
-
-
-
     
 }
