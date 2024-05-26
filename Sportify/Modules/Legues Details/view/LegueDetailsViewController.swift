@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource{
+class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     var legueDetailsViewModel = LeguesDetailsViewModel()
     var leagueId : Int?
     var league: LegueModel?
