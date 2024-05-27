@@ -80,7 +80,8 @@ extension LeguesTableViewController {
            let legueDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "LegueDetailsViewController") as! LegueDetailsViewController
            legueDetailVC.modalPresentationStyle = .fullScreen
            let league = viewModel.leagues[indexPath.row]
-           legueDetailVC.league = league 
+           legueDetailVC.league = league
+           legueDetailVC.sportType = sportType
            self.present(legueDetailVC, animated: true)
        }
 }
