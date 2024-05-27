@@ -102,58 +102,87 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
     func drawUpComingEventsCell ()-> NSCollectionLayoutSection{
         
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.75))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 17, bottom: 8, trailing: 50)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .absolute(300))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = NSDirectionalEdgeInsets(top: 32, leading: 35, bottom: 0, trailing: 50)
-        section.visibleItemsInvalidationHandler = { (items, offset, environment) in
-            items.forEach { item in
-                let distanceFromCenter = abs((item.frame.midX - offset.x) - environment.container.contentSize.width / 2.0)
-                let minScale: CGFloat = 0.8
-                let maxScale: CGFloat = 1.2
-                let scale = max(maxScale - (distanceFromCenter / environment.container.contentSize.width), minScale)
-                item.transform = CGAffineTransform(scaleX: scale, y: scale)
-            }
-        }
-        return section
+         let item = NSCollectionLayoutItem(layoutSize: itemSize)
+         item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 17, bottom: 8, trailing: 50)
+         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .absolute(300))
+         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+         let section = NSCollectionLayoutSection(group: group)
+         section.orthogonalScrollingBehavior = .continuous
+         section.contentInsets = NSDirectionalEdgeInsets(top: 32, leading: 35, bottom: 0, trailing: 50)
+         
+         // Header configuration
+         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44))
+         let header = NSCollectionLayoutBoundarySupplementaryItem(
+             layoutSize: headerSize,
+             elementKind: UICollectionView.elementKindSectionHeader,
+             alignment: .top
+         )
+         section.boundarySupplementaryItems = [header]
+         
+         section.visibleItemsInvalidationHandler = { (items, offset, environment) in
+             items.forEach { item in
+                 let distanceFromCenter = abs((item.frame.midX - offset.x) - environment.container.contentSize.width / 2.0)
+                 let minScale: CGFloat = 0.8
+                 let maxScale: CGFloat = 1.2
+                 let scale = max(maxScale - (distanceFromCenter / environment.container.contentSize.width), minScale)
+                 item.transform = CGAffineTransform(scaleX: scale, y: scale)
+             }
+         }
+         return section
     }
     
     func drawLatestEventsCell() -> NSCollectionLayoutSection {
         
         let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(360), heightDimension: .absolute(150))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(150))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
-        group.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 20, trailing: 2)
-        let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 15, bottom: 20, trailing: 2)
-        
-        return section
+           let item = NSCollectionLayoutItem(layoutSize: itemSize)
+           let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(150))
+           let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
+           group.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 20, trailing: 2)
+           let section = NSCollectionLayoutSection(group: group)
+           section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 15, bottom: 20, trailing: 2)
+           
+           // Header configuration
+           let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44))
+           let header = NSCollectionLayoutBoundarySupplementaryItem(
+               layoutSize: headerSize,
+               elementKind: UICollectionView.elementKindSectionHeader,
+               alignment: .top
+           )
+           section.boundarySupplementaryItems = [header]
+           
+           return section
     }
     
     func drawTeamsSectionCell() -> NSCollectionLayoutSection {
         
         let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(200), heightDimension: .absolute(200))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(200), heightDimension: .absolute(200))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        group.interItemSpacing = .fixed(0)
-        let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 20, trailing: 0)
-        section.visibleItemsInvalidationHandler = { (items, offset, environment) in
-            items.forEach { item in
-                let distanceFromCenter = abs((item.frame.midX - offset.x) - environment.container.contentSize.width / 2.0)
-                let minScale: CGFloat = 0.8
-                let maxScale: CGFloat = 1.2
-                let scale = max(maxScale - (distanceFromCenter / environment.container.contentSize.width), minScale)
-                item.transform = CGAffineTransform(scaleX: scale, y: scale)
-            }
-        }
-        return section
+           let item = NSCollectionLayoutItem(layoutSize: itemSize)
+           let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(200), heightDimension: .absolute(200))
+           let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+           group.interItemSpacing = .fixed(0)
+           let section = NSCollectionLayoutSection(group: group)
+           section.orthogonalScrollingBehavior = .continuous
+           section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 20, trailing: 0)
+           
+           // Header configuration
+           let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44))
+           let header = NSCollectionLayoutBoundarySupplementaryItem(
+               layoutSize: headerSize,
+               elementKind: UICollectionView.elementKindSectionHeader,
+               alignment: .top
+           )
+           section.boundarySupplementaryItems = [header]
+           
+           section.visibleItemsInvalidationHandler = { (items, offset, environment) in
+               items.forEach { item in
+                   let distanceFromCenter = abs((item.frame.midX - offset.x) - environment.container.contentSize.width / 2.0)
+                   let minScale: CGFloat = 0.8
+                   let maxScale: CGFloat = 1.2
+                   let scale = max(maxScale - (distanceFromCenter / environment.container.contentSize.width), minScale)
+                   item.transform = CGAffineTransform(scaleX: scale, y: scale)
+               }
+           }
+           return section
     }
     
     func drawSections(for sectionIndex: Int) -> NSCollectionLayoutSection {
@@ -273,26 +302,26 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
         return UICollectionViewCell()
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-           return CGSize(width: collectionView.frame.width, height: 20) // Adjust the height as needed
-       }
+        return CGSize(width: collectionView.frame.width, height: 44)
+    }
 
-       func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-           if kind == UICollectionView.elementKindSectionHeader {
-               let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderView", for: indexPath) as! CollectionReusableView
-               switch indexPath.section {
-               case 0:
-                   headerView.titleLabel.text = "Upcoming Events"
-               case 1:
-                   headerView.titleLabel.text = "Latest Events"
-               case 2:
-                   headerView.titleLabel.text = "Teams"
-               default:
-                   headerView.titleLabel.text = ""
-               }
-               return headerView
-           }
-           fatalError("Unexpected element kind")
-       }
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader {
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderView", for: indexPath) as! CollectionReusableView
+            switch indexPath.section {
+            case 0:
+                headerView.titleLabel.text = "Upcoming Events"
+            case 1:
+                headerView.titleLabel.text = "Latest Events"
+            case 2:
+                headerView.titleLabel.text = "Teams"
+            default:
+                headerView.titleLabel.text = ""
+            }
+            return headerView
+        }
+        fatalError("Unexpected element kind")
+    }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         cell.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
         UIView.animate(withDuration: 0.4) {
