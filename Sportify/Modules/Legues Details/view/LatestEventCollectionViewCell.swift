@@ -24,7 +24,7 @@ class LatestEventCollectionViewCell: UICollectionViewCell {
              contentView.clipsToBounds = false
              
           
-        contentView.layer.cornerRadius = 4.5
+        contentView.layer.cornerRadius = 8
              contentView.backgroundColor = .white
              
              contentView.layer.shadowColor = UIColor.black.cgColor
@@ -32,8 +32,8 @@ class LatestEventCollectionViewCell: UICollectionViewCell {
              contentView.layer.shadowRadius = 3
              contentView.layer.shadowOpacity = 0.3
              
-             contentView.layer.shadowPath = UIBezierPath(roundedRect: contentView.bounds, cornerRadius: contentView.layer.cornerRadius).cgPath
-        
+//             contentView.layer.shadowPath = UIBezierPath(roundedRect: contentView.bounds, cornerRadius: contentView.layer.cornerRadius).cgPath
+//        
         
          }
          

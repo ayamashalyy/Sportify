@@ -52,6 +52,8 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        let headerViewNib = UINib(nibName: "CollectionReusableView", bundle: nil)
+           compCollectionView.register(headerViewNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderView")
         isFav()
         compCollectionView.dataSource = self
         compCollectionView.delegate = self
@@ -101,7 +103,7 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
         
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.75))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 15, bottom: 8, trailing: 50)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 17, bottom: 8, trailing: 50)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .absolute(300))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
@@ -125,9 +127,9 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(150))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
-        group.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 6, bottom: 20, trailing: 2)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 20, trailing: 2)
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 6, bottom: 20, trailing: 2)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 15, bottom: 20, trailing: 2)
         
         return section
     }
@@ -270,7 +272,33 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
         
         return UICollectionViewCell()
     }
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+           return CGSize(width: collectionView.frame.width, height: 20) // Adjust the height as needed
+       }
+
+       func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+           if kind == UICollectionView.elementKindSectionHeader {
+               let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderView", for: indexPath) as! CollectionReusableView
+               switch indexPath.section {
+               case 0:
+                   headerView.titleLabel.text = "Upcoming Events"
+               case 1:
+                   headerView.titleLabel.text = "Latest Events"
+               case 2:
+                   headerView.titleLabel.text = "Teams"
+               default:
+                   headerView.titleLabel.text = ""
+               }
+               return headerView
+           }
+           fatalError("Unexpected element kind")
+       }
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        cell.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        UIView.animate(withDuration: 0.4) {
+            cell.transform = CGAffineTransform.identity
+        }
+    }
 }
 
 

@@ -43,6 +43,7 @@
 		6CC0FADB2C03B70F00D30FA1 /* NetworkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC0FADA2C03B70F00D30FA1 /* NetworkTest.swift */; };
 		6CC0FADF2C03D81600D30FA1 /* FavoriteViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC0FADE2C03D81600D30FA1 /* FavoriteViewModelTests.swift */; };
 		6CC0FAE62C03FF6F00D30FA1 /* finalAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CC0FAE52C03FF6F00D30FA1 /* finalAnimation.json */; };
+		6CC0FAE82C0400C700D30FA1 /* CollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC0FAE72C0400C700D30FA1 /* CollectionReusableView.swift */; };
 		6CC1EC302BFBFF9F00F606AE /* animation4.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CC1EC2F2BFBFF9F00F606AE /* animation4.json */; };
 		6CC35C072C02B6F000C7D3AD /* MockNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC35C062C02B6F000C7D3AD /* MockNetwork.swift */; };
 		6CEFE2722BFF994700D028A4 /* LatestEventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEFE2702BFF994700D028A4 /* LatestEventCollectionViewCell.swift */; };
@@ -119,6 +120,7 @@
 		6CC0FADA2C03B70F00D30FA1 /* NetworkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTest.swift; sourceTree = "<group>"; };
 		6CC0FADE2C03D81600D30FA1 /* FavoriteViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModelTests.swift; sourceTree = "<group>"; };
 		6CC0FAE52C03FF6F00D30FA1 /* finalAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = finalAnimation.json; sourceTree = "<group>"; };
+		6CC0FAE72C0400C700D30FA1 /* CollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionReusableView.swift; sourceTree = "<group>"; };
 		6CC1EC2F2BFBFF9F00F606AE /* animation4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation4.json; sourceTree = "<group>"; };
 		6CC35C062C02B6F000C7D3AD /* MockNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetwork.swift; sourceTree = "<group>"; };
 		6CEFE2702BFF994700D028A4 /* LatestEventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestEventCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				6CEFE2772BFFA8B200D028A4 /* UpComingEventsCollectionViewCell.xib */,
 				6CEFE27A2BFFA8C300D028A4 /* TeamsCollectionViewCell.swift */,
 				6CEFE27B2BFFA8C300D028A4 /* TeamsCollectionViewCell.xib */,
+				6CC0FAE72C0400C700D30FA1 /* CollectionReusableView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -735,6 +738,7 @@
 				035EFF752BF9852000B53B23 /* NetworkManager.swift in Sources */,
 				031981892BF482E0008ECF00 /* ViewController.swift in Sources */,
 				0319818F2BF482E0008ECF00 /* Sportify.xcdatamodeld in Sources */,
+				6CC0FAE82C0400C700D30FA1 /* CollectionReusableView.swift in Sources */,
 				032B05282BFD76C3000651AE /* PlayerTableViewCell.swift in Sources */,
 				035EFF732BF973F500B53B23 /* LegueModel.swift in Sources */,
 				6CAC38662C00E1A000A1BE24 /* LegueDetailsModel.swift in Sources */,
