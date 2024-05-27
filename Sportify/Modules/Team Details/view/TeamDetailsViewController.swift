@@ -9,6 +9,7 @@ class TeamDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var tableView: UITableView!
     var team_key: Int?
     var leagueId : Int?
+    var sportType:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,7 +18,7 @@ class TeamDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.register(UINib(nibName: "PlayerTableViewCell", bundle: nil), forCellReuseIdentifier: "PlayerTableViewCell")
         
         if let teamKey = team_key {
-            legueDetailsViewModel.fetchTeams(for: teamKey) {_ in 
+            legueDetailsViewModel.fetchTeams(for: teamKey) {_ in
                    DispatchQueue.main.async { [weak self] in
                        self?.setupUI() 
                    }
