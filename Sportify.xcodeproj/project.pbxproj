@@ -14,7 +14,6 @@
 		0319818F2BF482E0008ECF00 /* Sportify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0319818D2BF482E0008ECF00 /* Sportify.xcdatamodeld */; };
 		031981912BF482E8008ECF00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 031981902BF482E8008ECF00 /* Assets.xcassets */; };
 		031981942BF482E8008ECF00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031981922BF482E8008ECF00 /* LaunchScreen.storyboard */; };
-		0319819F2BF482E9008ECF00 /* SportifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0319819E2BF482E9008ECF00 /* SportifyTests.swift */; };
 		031981A92BF482E9008ECF00 /* SportifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031981A82BF482E9008ECF00 /* SportifyUITests.swift */; };
 		031981AB2BF482E9008ECF00 /* SportifyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031981AA2BF482E9008ECF00 /* SportifyUITestsLaunchTests.swift */; };
 		032B05252BFD70C7000651AE /* TeamDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B05242BFD70C7000651AE /* TeamDetailsViewController.swift */; };
@@ -43,6 +42,7 @@
 		6C54D1172C0519D6002E622C /* EmptyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C54D1152C0519D6002E622C /* EmptyCollectionViewCell.xib */; };
 		6C54D11A2C052416002E622C /* EmptyStateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C54D1182C052416002E622C /* EmptyStateCollectionViewCell.swift */; };
 		6C54D11B2C052416002E622C /* EmptyStateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C54D1192C052416002E622C /* EmptyStateCollectionViewCell.xib */; };
+		6C54D11D2C05597C002E622C /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C54D11C2C05597C002E622C /* MockNetworkService.swift */; };
 		6CAC38642C00E16B00A1BE24 /* LeguesDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAC38632C00E16B00A1BE24 /* LeguesDetailsViewModel.swift */; };
 		6CAC38662C00E1A000A1BE24 /* LegueDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAC38652C00E1A000A1BE24 /* LegueDetailsModel.swift */; };
 		6CAC38682C0121AB00A1BE24 /* TeamsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAC38672C0121AB00A1BE24 /* TeamsModel.swift */; };
@@ -91,7 +91,6 @@
 		031981932BF482E8008ECF00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		031981952BF482E8008ECF00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0319819A2BF482E9008ECF00 /* SportifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0319819E2BF482E9008ECF00 /* SportifyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportifyTests.swift; sourceTree = "<group>"; };
 		031981A42BF482E9008ECF00 /* SportifyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportifyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		031981A82BF482E9008ECF00 /* SportifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportifyUITests.swift; sourceTree = "<group>"; };
 		031981AA2BF482E9008ECF00 /* SportifyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportifyUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -125,6 +124,7 @@
 		6C54D1152C0519D6002E622C /* EmptyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyCollectionViewCell.xib; sourceTree = "<group>"; };
 		6C54D1182C052416002E622C /* EmptyStateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateCollectionViewCell.swift; sourceTree = "<group>"; };
 		6C54D1192C052416002E622C /* EmptyStateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyStateCollectionViewCell.xib; sourceTree = "<group>"; };
+		6C54D11C2C05597C002E622C /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
 		6CAC38632C00E16B00A1BE24 /* LeguesDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeguesDetailsViewModel.swift; sourceTree = "<group>"; };
 		6CAC38652C00E1A000A1BE24 /* LegueDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegueDetailsModel.swift; sourceTree = "<group>"; };
 		6CAC38672C0121AB00A1BE24 /* TeamsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsModel.swift; sourceTree = "<group>"; };
@@ -254,12 +254,12 @@
 		0319819D2BF482E9008ECF00 /* SportifyTests */ = {
 			isa = PBXGroup;
 			children = (
-				0319819E2BF482E9008ECF00 /* SportifyTests.swift */,
 				6CC35C062C02B6F000C7D3AD /* MockNetwork.swift */,
 				6CC0FADA2C03B70F00D30FA1 /* NetworkTest.swift */,
 				6CC0FADE2C03D81600D30FA1 /* FavoriteViewModelTests.swift */,
 				03DF340C2C02933F00FCD034 /* DataBaseMangerTests.swift */,
 				03DF34102C029BF600FCD034 /* MokeDataBaseManager.swift */,
+				6C54D11C2C05597C002E622C /* MockNetworkService.swift */,
 			);
 			path = SportifyTests;
 			sourceTree = "<group>";
@@ -788,10 +788,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C54D11D2C05597C002E622C /* MockNetworkService.swift in Sources */,
 				6CC35C072C02B6F000C7D3AD /* MockNetwork.swift in Sources */,
 				03DF34112C029BF600FCD034 /* MokeDataBaseManager.swift in Sources */,
 				03DF340D2C02933F00FCD034 /* DataBaseMangerTests.swift in Sources */,
-				0319819F2BF482E9008ECF00 /* SportifyTests.swift in Sources */,
 				6CC0FADB2C03B70F00D30FA1 /* NetworkTest.swift in Sources */,
 				6CC0FADF2C03D81600D30FA1 /* FavoriteViewModelTests.swift in Sources */,
 			);
