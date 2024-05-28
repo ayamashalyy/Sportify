@@ -15,13 +15,21 @@ struct LegueModel {
 
 
 protocol Database {
+    var leaguesDidChange: (() -> Void)? { get set }
+    
     func insertLeague(league: LegueModel)
     func getAllLeagues() -> [LegueModel]
     func deleteLeagueFromFavorites(league: LegueModel)
 }
 
 class MockDataBaseManager: Database {
-    private var leagues: [LegueModel] = []
+    private var leagues: [LegueModel] = [] {
+        didSet {
+            leaguesDidChange?()
+        }
+    }
+    
+    var leaguesDidChange: (() -> Void)?
     
     func insertLeague(league: LegueModel) {
         leagues.append(league)

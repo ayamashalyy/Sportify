@@ -1,22 +1,23 @@
 //
-//  NetworkTest.swift
+//  NetworkTestingTeams.swift
 //  SportifyTests
 //
-//  Created by Marim Mohamed Mohamed Yacout on 26/05/2024.
+//  Created by Marim Mohamed Mohamed Yacout on 28/05/2024.
 //
+
 import XCTest
 @testable import Sportify
 import Alamofire
 
-class NetworkManagerTests: XCTestCase {
+class NetworkManagerTeamsTests: XCTestCase {
 
     func testFetchDataWithLegueDetailsResponse() {
         let expectation = self.expectation(description: "Fetching data from network")
 
-        let mockURL = "https://apiv2.allsportsapi.com/football?met=Fixtures&leagueId=205&from=2023-01-18&to=2024-01-18&APIkey=51fb4fba89ac7fb4d039a71fd0d43949585fd598bc57e551715357e78ff32cd7"
+        let url = "https://apiv2.allsportsapi.com/football/?&met=Teams&leagueId=205&APIkey=51fb4fba89ac7fb4d039a71fd0d43949585fd598bc57e551715357e78ff32cd7"
 
         
-        NetworkManager.shared.fetchData(from: mockURL, responseType: LegueDetailsResponse.self) { result in
+        NetworkManager.shared.fetchData(from: url, responseType: LegueDetailsResponse.self) { result in
             switch result {
             case .success(let data):
              
@@ -36,3 +37,4 @@ class NetworkManagerTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
     }
 }
+
