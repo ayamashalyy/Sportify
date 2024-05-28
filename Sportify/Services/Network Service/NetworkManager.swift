@@ -8,7 +8,10 @@
 import Foundation
 import Alamofire
 
-class NetworkManager {
+protocol NetworkService {
+    func fetchData<T: Decodable>(from url: String, responseType: T.Type, completionHandler completion: @escaping (Swift.Result<T, Error>) -> Void)
+}
+class NetworkManager :NetworkService {
     static let shared = NetworkManager()
     
     private init() {}

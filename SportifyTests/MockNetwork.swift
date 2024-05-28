@@ -1,56 +1,77 @@
-////
-////  MockNetwork.swift
-////  SportifyTests
-////
-////  Created by Marim Mohamed Mohamed Yacout on 26/05/2024.
-////
-//import XCTest
-//import Alamofire
-//@testable import Sportify
 //
-//class MockNetworkTests: XCTestCase {
-//    func testFetchLeagues() {
-//        
-//        let url = "https://apiv2.allsportsapi.com/football/?met=Leagues&APIkey=51fb4fba89ac7fb4d039a71fd0d43949585fd598bc57e551715357e78ff32cd7"
-//        let expectedLeagues = [
-//            LegueModel(league_key: 3, league_name: "UEFA Champions League", league_logo:"https://apiv2.allsportsapi.com/logo/logo_leagues/3_uefa_champions_league.png"),
-//            LegueModel(league_key:4, league_name: "UEFA Europa League", league_logo: "https://apiv2.allsportsapi.com/logo/logo_leagues/")
-//        ]
-//        let expectedResponse = LegueResponse(success: 1, result: expectedLeagues)
+//  MockNetwork.swift
+//  SportifyTests
 //
-//        // Mock the Alamofire response
-//        let expectation = self.expectation(description: "Fetch leagues")
-//        let stubRequest = Alamofire.request(url)
-//        stubRequest.responseJSON { response in
-//            switch response.result {
-//            case .success(let value):
-//                do {
-//                    let data = try JSONSerialization.data(withJSONObject: value, options: [])
-//                    let decodedResponse = try JSONDecoder().decode(LegueResponse.self, from: data)
-//                    XCTAssertEqual(decodedResponse.success, 1)
-//                    XCTAssertEqual(decodedResponse.result?.count, 2)
-//                    XCTAssertEqual(decodedResponse.result?[4].league_key, expectedLeagues[4].league_key)
-//                    XCTAssertEqual(decodedResponse.result?[4].league_name, expectedLeagues[4].league_name)
-//                    XCTAssertEqual(decodedResponse.result?[4].league_logo, expectedLeagues[4].league_logo)
-//                    XCTAssertEqual(decodedResponse.result?[1].league_key, expectedLeagues[1].league_key)
-//                    XCTAssertEqual(decodedResponse.result?[1].league_name, expectedLeagues[1].league_name)
-//                    XCTAssertEqual(decodedResponse.result?[1].league_logo, expectedLeagues[1].league_logo)
-//                } catch {
-//                    XCTFail("Unexpected error: \(error)")
-//                }
-//                expectation.fulfill()
-//            case .failure(let error):
-//                XCTFail("Unexpected error: \(error)")
-//                expectation.fulfill()
-//            }
-//        }
+//  Created by Marim Mohamed Mohamed Yacout on 26/05/2024.
 //
-//        // Act
-//        NetworkManager.shared.fetchData(from: url, responseType: LegueResponse.self) { result in
-//            // No need to do anything here, since the response is already handled in the stubRequest.responseJSON closure
-//        }
-//
-//        // Assert
-//        waitForExpectations(timeout: 5.0, handler: nil)
-//    }
-//}
+import XCTest
+import Alamofire
+@testable import Sportify
+
+import XCTest
+
+class MockNetwork: XCTestCase {
+    var networkService: NetworkService!
+    var mockNetworkService: MockNetworkService!
+
+    override func setUp() {
+        super.setUp()
+        mockNetworkService = MockNetworkService()
+        networkService = mockNetworkService!
+    }
+
+    func testFetchDataSuccess() {
+      
+        let jsonString = """
+        {
+            "success": 1,
+            "result": [
+                {
+                    "team_key": 1,
+                    "team_name": "Team A",
+                    "team_logo": "logo_url",
+                    "players": [],
+                    "coaches": []
+                }
+            ]
+        }
+        """
+        mockNetworkService.mockData = jsonString.data(using: .utf8)
+        
+     
+        let expectation = self.expectation(description: "FetchData")
+        networkService.fetchData(from: "test_url", responseType: TeamsResponse.self) { result in
+       
+            switch result {
+            case .success(let teamsResponse):
+                XCTAssertEqual(teamsResponse.success, 1)
+                XCTAssertEqual(teamsResponse.result?.first?.team_name, "Team A")
+            case .failure(let error):
+                XCTFail("Expected success, but got failure with error: \(error)")
+            }
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1.0, handler: nil)
+    }
+
+    func testFetchDataFailure() {
+       
+        mockNetworkService.mockError = NSError(domain: "TestError", code: 1, userInfo: nil)
+        
+     
+        let expectation = self.expectation(description: "FetchData")
+        networkService.fetchData(from: "test_url", responseType: TeamsResponse.self) { result in
+        
+            switch result {
+            case .success(_):
+                XCTFail("Expected failure, but got success")
+            case .failure(let error):
+                XCTAssertNotNil(error)
+            }
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1.0, handler: nil)
+    }
+}
