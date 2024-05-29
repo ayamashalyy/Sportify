@@ -70,6 +70,7 @@ class FavoriteTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LeguesTableViewCell", for: indexPath) as! LeguesTableViewCell
         let league = favoriteViewModel.leagues[indexPath.row]
         cell.legueLabel.text = league.league_name
+        super.tableView(tableView, cellForRowAt: indexPath)
         if let logoURL = league.league_logo, let url = URL(string: logoURL) {
             cell.legueImage.kf.setImage(with: url)
             cell.legueImage.layer.cornerRadius = cell.legueImage.frame.height / 2
@@ -100,6 +101,7 @@ class FavoriteTableViewController: UITableViewController {
             if reachability?.connection == .wifi || reachability?.connection == .cellular {
                 if let leagueDetailsVC = UIStoryboard(name: "Second", bundle: nil).instantiateViewController(withIdentifier: "LegueDetailsViewController") as? LegueDetailsViewController {
                     leagueDetailsVC.modalPresentationStyle = .fullScreen
+                    leagueDetailsVC.league = favoriteViewModel.leagues[indexPath.row]
                     present(leagueDetailsVC, animated: true, completion: nil)
                 }
             } else {

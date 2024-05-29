@@ -17,4 +17,6 @@ struct LegueModel: Codable {
     let league_key: Int?
     let league_name: String?
     let league_logo: String?
+    var sportType: String?
+
 }

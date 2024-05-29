@@ -31,6 +31,7 @@ class DataBaseManager : FavoriteProtocol {
         myLeague.setValue(league.league_key, forKey: "league_key")
         myLeague.setValue(league.league_name, forKey: "league_name")
         myLeague.setValue(league.league_logo, forKey: "league_logo")
+        myLeague.setValue(league.sportType, forKey: "sportType")
         do {
             try managedContext.save()
         }catch let error as NSError{
@@ -52,8 +53,10 @@ class DataBaseManager : FavoriteProtocol {
             for data in results as! [NSManagedObject] {
                 if let leagueKey = data.value(forKey: "league_key") as? Int,
                    let leagueName = data.value(forKey: "league_name") as? String,
-                   let leagueLogo = data.value(forKey: "league_logo") as? String? {
-                    let league = LegueModel(league_key: leagueKey, league_name: leagueName, league_logo: leagueLogo)
+                   let leagueLogo = data.value(forKey: "league_logo") as? String?,
+                   let leagueSportType = data.value(forKey: "sportType") as? String?
+                {
+                    let league = LegueModel(league_key: leagueKey, league_name: leagueName, league_logo: leagueLogo, sportType: leagueSportType)
                     leagues.append(league)
                 }
             }
