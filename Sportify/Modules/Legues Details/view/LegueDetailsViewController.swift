@@ -18,17 +18,28 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
             print("No league model available to insert")
             return
         }
+        var message = ""
+
         if isFav() {
             legueDetailsViewModel.removeLeagueFromFavorites(league: league)
             favButton.image = UIImage(named : "8")
+            message = "Deleted from favorites."
+
         } else {
             legueDetailsViewModel.addLeagueToFavorites(league: league)
             favButton.image = UIImage(named : "9")
-            
+            message = "Saved to favorites."
         }
+        showAlert(message: message)
+
         
     }
-    
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Favorite Action", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+    }
     
     func isFav() -> Bool {
         var isFavorite: Bool = false
@@ -163,7 +174,7 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
         group.interItemSpacing = .fixed(0)
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 20, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 20, trailing: 20)
         
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(44))
         let header = NSCollectionLayoutBoundarySupplementaryItem(

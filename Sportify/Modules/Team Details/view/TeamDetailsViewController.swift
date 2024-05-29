@@ -7,12 +7,13 @@ class TeamDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var teamImage: UIImageView!
     @IBOutlet weak var coachName: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var teamView: UIView!
     var team_key: Int?
     var leagueId : Int?
     var sportType:String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        updateView()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "PlayerTableViewCell", bundle: nil), forCellReuseIdentifier: "PlayerTableViewCell")
@@ -27,6 +28,19 @@ class TeamDetailsViewController: UIViewController, UITableViewDelegate, UITableV
                print("Team key is nil or zero")
            }
     }
+    func updateView(){
+        teamView.clipsToBounds = false
+        teamView.layer.cornerRadius = 25
+        teamView.backgroundColor = .white
+        teamView.layer.shadowColor = UIColor.black.cgColor
+        teamView.layer.shadowOffset = CGSize(width: 0, height: 5)
+        teamView.layer.shadowRadius = 2
+        teamView.layer.shadowOpacity = 0.3
+        teamView.layer.shadowPath = UIBezierPath(roundedRect: teamView.bounds, cornerRadius: teamView.layer.cornerRadius).cgPath
+     
+    }
+    
+    
     
     func setupUI() {
         
@@ -72,6 +86,15 @@ class TeamDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 140
