@@ -25,8 +25,8 @@ class TeamsCollectionViewCell: UICollectionViewCell {
              contentView.layer.shadowRadius = 3
              contentView.layer.shadowOpacity = 0.3
           
-             contentView.layer.borderWidth = 1.0
-             contentView.layer.borderColor = UIColor.black.cgColor
+//             contentView.layer.borderWidth = 1.0
+//             contentView.layer.borderColor = UIColor.black.cgColor
          }
          
          override func layoutSubviews() {
