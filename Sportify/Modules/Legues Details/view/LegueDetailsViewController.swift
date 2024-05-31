@@ -279,11 +279,10 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
                     cell.timeLatestEvent.text = leagueDetails.event_time
                     let eventDateFormatter = DateFormatter()
                     eventDateFormatter.dateFormat = "yyyy-MM-dd"
-                    let eventDate = eventDateFormatter.date(from: leagueDetails.event_date!)!
-                    let calendar = Calendar.current
-                    let day = calendar.component(.day, from: eventDate)
+                    let eventDate = eventDateFormatter.date(from: leagueDetails.event_date ?? "30 FEB");  let calendar = Calendar.current
+                    let day = calendar.component(.day, from: eventDate!)
                     let monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
-                    let month = calendar.component(.month, from: eventDate)
+                    let month = calendar.component(.month, from: eventDate!)
                     let eventDateString = "\(day) \(monthNames[month - 1])"
                     cell.dateLatestEvent.text = eventDateString
                     cell.team1Name.text = leagueDetails.event_home_team
