@@ -69,7 +69,7 @@ class DataBaseManager : FavoriteProtocol {
     }
     
     func deleteLeagueFromFavorites(league: LegueModel) {
-        
+        print("Aya")
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
