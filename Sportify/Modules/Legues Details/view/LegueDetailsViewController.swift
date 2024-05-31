@@ -292,12 +292,17 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
                     cell.timeLatestEvent.text = leagueDetails.event_time
                     let eventDateFormatter = DateFormatter()
                     eventDateFormatter.dateFormat = "yyyy-MM-dd"
-                    let eventDate = eventDateFormatter.date(from: leagueDetails.event_date ?? "30 FEB");  let calendar = Calendar.current
-                    let day = calendar.component(.day, from: eventDate!)
-                    let monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
-                    let month = calendar.component(.month, from: eventDate!)
-                    let eventDateString = "\(day) \(monthNames[month - 1])"
-                    cell.dateLatestEvent.text = eventDateString
+                    if let eventDateString = leagueDetails.event_date,
+                       let eventDate = eventDateFormatter.date(from: eventDateString) {
+                        let calendar = Calendar.current
+                        let day = calendar.component(.day, from: eventDate)
+                        let monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
+                        let month = calendar.component(.month, from: eventDate)
+                        let formattedEventDateString = "\(day) \(monthNames[month - 1])"
+                        cell.dateLatestEvent.text = formattedEventDateString
+                    } else {
+                        cell.dateLatestEvent.text = "No Date"
+                    }
                     cell.team1Name.text = leagueDetails.event_home_team
                     cell.team2Name.text = leagueDetails.event_away_team
                     if let imageUrlOfTeam1 = leagueDetails.home_team_logo, let urlLogo1 = URL(string: imageUrlOfTeam1) {
