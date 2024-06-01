@@ -238,118 +238,121 @@ class LegueDetailsViewController: UIViewController ,UICollectionViewDelegate,UIC
         }
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        switch indexPath.section {
             
-        case 0:
-            if legueDetailsViewModel.legueDetails.isEmpty {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyStateCell", for: indexPath) as! EmptyStateCollectionViewCell
-                cell.emptyImage.image = UIImage(named: "noEvent")
-                return cell
-            } else {
-                if indexPath.row < legueDetailsViewModel.legueDetails.count {
-                    let leagueDetails = legueDetailsViewModel.legueDetails[indexPath.row]
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "upComingCell", for: indexPath) as! UpComingEventsCollectionViewCell
-                    cell.eventName.text = leagueDetails.league_name
-                    cell.eventTime.text = leagueDetails.event_time
-                    let eventDateFormatter = DateFormatter()
-                    eventDateFormatter.dateFormat = "yyyy-MM-dd"
-                    let eventDate = eventDateFormatter.date(from: leagueDetails.event_date!)!
-                    let calendar = Calendar.current
-                    let day = calendar.component(.day, from: eventDate)
-                    let monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
-                    let month = calendar.component(.month, from: eventDate)
-                    let eventDateString = "\(day) \(monthNames[month - 1])"
-                    cell.eventDate.text = eventDateString
-                    cell.team1_name.text = leagueDetails.event_home_team
-                    cell.team2_name.text = leagueDetails.event_away_team
-                    if let imageUrlOfTeam1 = leagueDetails.home_team_logo, let urlLogo1 = URL(string: imageUrlOfTeam1) {
-                        cell.team1_logo.kf.setImage(with: urlLogo1)
-                    } else {
-                        cell.team1_logo.image = UIImage(named: "cup.jpeg")
-                    }
-                    if let imageUrlOfTeam2 = leagueDetails.away_team_logo, let urlLogo2 = URL(string: imageUrlOfTeam2) {
-                        cell.team2_logo.kf.setImage(with: urlLogo2)
-                    } else {
-                        cell.team2_logo.image = UIImage(named: "cup.jpeg")
-                    }
-                    cell.layer.cornerRadius = 25
+            switch indexPath.section {
+                
+            case 0:
+                if legueDetailsViewModel.legueDetails.isEmpty {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyStateCell", for: indexPath) as! EmptyStateCollectionViewCell
+                    cell.emptyImage.image = UIImage(named: "noEvent")
                     return cell
+                } else {
+                    if indexPath.row < legueDetailsViewModel.legueDetails.count {
+                        let leagueDetails = legueDetailsViewModel.legueDetails[indexPath.row]
+                        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "upComingCell", for: indexPath) as! UpComingEventsCollectionViewCell
+                        cell.eventName.text = leagueDetails.league_name
+                        cell.eventTime.text = leagueDetails.event_time
+                        let eventDateFormatter = DateFormatter()
+                        eventDateFormatter.dateFormat = "yyyy-MM-dd"
+                        if let eventDateString = leagueDetails.event_date,
+                           let eventDate = eventDateFormatter.date(from: eventDateString) {
+                            let calendar = Calendar.current
+                            let day = calendar.component(.day, from: eventDate)
+                            let monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
+                            let month = calendar.component(.month, from: eventDate)
+                            let formattedEventDateString = "\(day) \(monthNames[month - 1])"
+                            cell.eventDate.text = formattedEventDateString
+                        } else {
+                            cell.eventDate.text = "No Date"
+                        }
+                        cell.team1_name.text = leagueDetails.event_home_team
+                        cell.team2_name.text = leagueDetails.event_away_team
+                        if let imageUrlOfTeam1 = leagueDetails.home_team_logo, let urlLogo1 = URL(string: imageUrlOfTeam1) {
+                            cell.team1_logo.kf.setImage(with: urlLogo1)
+                        } else {
+                            cell.team1_logo.image = UIImage(named: "cup.jpeg")
+                        }
+                        if let imageUrlOfTeam2 = leagueDetails.away_team_logo, let urlLogo2 = URL(string: imageUrlOfTeam2) {
+                            cell.team2_logo.kf.setImage(with: urlLogo2)
+                        } else {
+                            cell.team2_logo.image = UIImage(named: "cup.jpeg")
+                        }
+                        cell.layer.cornerRadius = 25
+                        return cell
+                    }
                 }
+                
+            case 1:
+                if legueDetailsViewModel.legueDetails.isEmpty {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyStateCell", for: indexPath) as! EmptyStateCollectionViewCell
+                    cell.emptyImage.image = UIImage(named: "noEvent")
+                    return cell
+                } else {
+                    if indexPath.row < legueDetailsViewModel.legueDetails.count {
+                        let leagueDetails = legueDetailsViewModel.legueDetails[indexPath.row]
+                        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "latestCell", for: indexPath) as! LatestEventCollectionViewCell
+                        cell.timeLatestEvent.text = leagueDetails.event_time
+                        let eventDateFormatter = DateFormatter()
+                        eventDateFormatter.dateFormat = "yyyy-MM-dd"
+                        if let eventDateString = leagueDetails.event_date,
+                           let eventDate = eventDateFormatter.date(from: eventDateString) {
+                            let calendar = Calendar.current
+                            let day = calendar.component(.day, from: eventDate)
+                            let monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
+                            let month = calendar.component(.month, from: eventDate)
+                            let formattedEventDateString = "\(day) \(monthNames[month - 1])"
+                            cell.dateLatestEvent.text = formattedEventDateString
+                        } else {
+                            cell.dateLatestEvent.text = "No Date"
+                        }
+                        cell.team1Name.text = leagueDetails.event_home_team
+                        cell.team2Name.text = leagueDetails.event_away_team
+                        if let imageUrlOfTeam1 = leagueDetails.home_team_logo, let urlLogo1 = URL(string: imageUrlOfTeam1) {
+                            cell.team1Logo.kf.setImage(with: urlLogo1)
+                        } else {
+                            cell.team1Logo.image = UIImage(named: "cup.jpeg")
+                        }
+                        if let imageUrlOfTeam2 = leagueDetails.away_team_logo, let urlLogo2 = URL(string: imageUrlOfTeam2) {
+                            cell.team2Logo.kf.setImage(with: urlLogo2)
+                        } else {
+                            cell.team2Logo.image = UIImage(named: "cup.jpeg")
+                        }
+                        cell.score.text = leagueDetails.event_final_result
+                        
+                        
+                        
+                        cell.layer.cornerRadius = 25
+                        
+                        return cell
+                    }
+                }
+            case 2:
+                if legueDetailsViewModel.teamData.isEmpty {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyStateCell", for: indexPath) as! EmptyStateCollectionViewCell
+                    cell.emptyImage.image = UIImage(named: "noTeam")
+                    return cell
+                } else {
+                    if indexPath.row < legueDetailsViewModel.teamData.count {
+                        let teamData = legueDetailsViewModel.teamData[indexPath.row]
+                        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "teamsCell", for: indexPath) as! TeamsCollectionViewCell
+                        cell.teamName.text = teamData.team_name
+                        if let imageUrlOfTeam = teamData.team_logo, let urlLogo = URL(string: imageUrlOfTeam) {
+                            cell.teamLogo.kf.setImage(with: urlLogo)
+                        } else {
+                            cell.teamLogo.image = UIImage(named: "cup.jpeg")
+                        }
+                        cell.layer.cornerRadius = 25
+                        
+                        return cell
+                    }
+                }
+            default:
+                fatalError("Invalid section")
             }
             
-        case 1:
-            if legueDetailsViewModel.legueDetails.isEmpty {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyStateCell", for: indexPath) as! EmptyStateCollectionViewCell
-                cell.emptyImage.image = UIImage(named: "noEvent")
-                return cell
-            } else {
-                if indexPath.row < legueDetailsViewModel.legueDetails.count {
-                    let leagueDetails = legueDetailsViewModel.legueDetails[indexPath.row]
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "latestCell", for: indexPath) as! LatestEventCollectionViewCell
-                    cell.timeLatestEvent.text = leagueDetails.event_time
-                    let eventDateFormatter = DateFormatter()
-                    eventDateFormatter.dateFormat = "yyyy-MM-dd"
-                    if let eventDateString = leagueDetails.event_date,
-                       let eventDate = eventDateFormatter.date(from: eventDateString) {
-                        let calendar = Calendar.current
-                        let day = calendar.component(.day, from: eventDate)
-                        let monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
-                        let month = calendar.component(.month, from: eventDate)
-                        let formattedEventDateString = "\(day) \(monthNames[month - 1])"
-                        cell.dateLatestEvent.text = formattedEventDateString
-                    } else {
-                        cell.dateLatestEvent.text = "No Date"
-                    }
-                    cell.team1Name.text = leagueDetails.event_home_team
-                    cell.team2Name.text = leagueDetails.event_away_team
-                    if let imageUrlOfTeam1 = leagueDetails.home_team_logo, let urlLogo1 = URL(string: imageUrlOfTeam1) {
-                        cell.team1Logo.kf.setImage(with: urlLogo1)
-                    } else {
-                        cell.team1Logo.image = UIImage(named: "cup.jpeg")
-                    }
-                    if let imageUrlOfTeam2 = leagueDetails.away_team_logo, let urlLogo2 = URL(string: imageUrlOfTeam2) {
-                        cell.team2Logo.kf.setImage(with: urlLogo2)
-                    } else {
-                        cell.team2Logo.image = UIImage(named: "cup.jpeg")
-                    }
-                    cell.score.text = leagueDetails.event_final_result
-                    
-                    
-                    
-                    cell.layer.cornerRadius = 25
-                    
-                    return cell
-                }
-            }
-        case 2:
-            if legueDetailsViewModel.teamData.isEmpty {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyStateCell", for: indexPath) as! EmptyStateCollectionViewCell
-                cell.emptyImage.image = UIImage(named: "noTeam")
-                return cell
-            } else {
-                if indexPath.row < legueDetailsViewModel.teamData.count {
-                    let teamData = legueDetailsViewModel.teamData[indexPath.row]
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "teamsCell", for: indexPath) as! TeamsCollectionViewCell
-                    cell.teamName.text = teamData.team_name
-                    if let imageUrlOfTeam = teamData.team_logo, let urlLogo = URL(string: imageUrlOfTeam) {
-                        cell.teamLogo.kf.setImage(with: urlLogo)
-                    } else {
-                        cell.teamLogo.image = UIImage(named: "cup.jpeg")
-                    }
-                    cell.layer.cornerRadius = 25
-                    
-                    return cell
-                }
-            }
-        default:
-            fatalError("Invalid section")
+            return UICollectionViewCell()
         }
-        
-        return UICollectionViewCell()
-    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 44)
     }
