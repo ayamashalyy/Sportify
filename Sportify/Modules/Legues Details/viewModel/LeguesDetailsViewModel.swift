@@ -14,7 +14,7 @@ class LeguesDetailsViewModel {
     let baseURL = "https://apiv2.allsportsapi.com/"
     
     //https://apiv2.allsportsapi.com/football?met=Fixtures&leagueId=205&from=2023-01-18&to=2024-01-18&APIkey=[YourKey]
-    let apiKey = "51fb4fba89ac7fb4d039a71fd0d43949585fd598bc57e551715357e78ff32cd7"
+    let apiKey = "110571620ebb23cda53f9498cea6535844366c80c1549ba059cfdceb176a0846"
     
     func fetchUpComingEventsLegueDetails(for leagueId:Int,sportType:String){
         let url = "\(baseURL)\(sportType)?met=Fixtures&leagueId=\(leagueId)&from=2024-05-18&to=2024-08-18&APIkey=\(apiKey)"

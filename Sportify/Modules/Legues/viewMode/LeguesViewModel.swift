@@ -12,7 +12,7 @@ class LeguesViewModel {
     var didUpdateLeagues: (() -> Void)?
     var didFailWithError: ((Error) -> Void)?
     let baseURL = "https://apiv2.allsportsapi.com/"
-    let apiKey = "51fb4fba89ac7fb4d039a71fd0d43949585fd598bc57e551715357e78ff32cd7"
+    let apiKey = "110571620ebb23cda53f9498cea6535844366c80c1549ba059cfdceb176a0846"
     
     
     func fetchLeagues(for sportType: String) {
