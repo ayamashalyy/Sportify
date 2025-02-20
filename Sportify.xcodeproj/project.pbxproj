@@ -247,16 +247,14 @@
 		031981832BF482E0008ECF00 /* Sportify */ = {
 			isa = PBXGroup;
 			children = (
+				E8E1D41B2D67498100A89542 /* Configuration */,
+				E8E1D41A2D67492200A89542 /* Resources */,
+				E8E1D4192D67490D00A89542 /* Core */,
 				03D6B99C2BF6647800095008 /* Model */,
 				03D6B99D2BF664A900095008 /* Services */,
 				03D6B99E2BF6651600095008 /* Modules */,
-				03D6B99B2BF6644500095008 /* View */,
-				03D6B9A82BF6682900095008 /* Json */,
-				031981842BF482E0008ECF00 /* AppDelegate.swift */,
-				031981862BF482E0008ECF00 /* SceneDelegate.swift */,
-				031981902BF482E8008ECF00 /* Assets.xcassets */,
-				031981952BF482E8008ECF00 /* Info.plist */,
-				0319818D2BF482E0008ECF00 /* Sportify.xcdatamodeld */,
+				03D6B99B2BF6644500095008 /* Storyboards */,
+				E8E1D41C2D674AC200A89542 /* CoreData */,
 			);
 			path = Sportify;
 			sourceTree = "<group>";
@@ -314,14 +312,13 @@
 			path = viewModel;
 			sourceTree = "<group>";
 		};
-		03D6B99B2BF6644500095008 /* View */ = {
+		03D6B99B2BF6644500095008 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				0319818A2BF482E0008ECF00 /* Main.storyboard */,
-				031981922BF482E8008ECF00 /* LaunchScreen.storyboard */,
 				03D6B9AE2BF66C5600095008 /* Second.storyboard */,
 			);
-			path = View;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		03D6B99C2BF6647800095008 /* Model */ = {
@@ -514,6 +511,41 @@
 				E574995E63AA889511CB8772 /* Pods_SportifyTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E8E1D4192D67490D00A89542 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				031981842BF482E0008ECF00 /* AppDelegate.swift */,
+				031981862BF482E0008ECF00 /* SceneDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E8E1D41A2D67492200A89542 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				03D6B9A82BF6682900095008 /* Json */,
+				031981922BF482E8008ECF00 /* LaunchScreen.storyboard */,
+				031981902BF482E8008ECF00 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E8E1D41B2D67498100A89542 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				031981952BF482E8008ECF00 /* Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		E8E1D41C2D674AC200A89542 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0319818D2BF482E0008ECF00 /* Sportify.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -987,7 +1019,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Sportify/Info.plist;
+				INFOPLIST_FILE = Sportify/Configuration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1016,7 +1048,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Sportify/Info.plist;
+				INFOPLIST_FILE = Sportify/Configuration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
