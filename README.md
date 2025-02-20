@@ -25,6 +25,10 @@ A sports app that offers **real-time match updates, schedules, team details**, a
 
 ---
 
+## 🎬 Watch Demo Video
+
+[Watch the video](https://drive.google.com/file/d/1Ykxjnz0JmZNw_AS6vTDjbVAKUxE5yDZ5/view?usp=sharing)
+
 ## Installation and Usage
 1. Clone the repository:
    ```bash
